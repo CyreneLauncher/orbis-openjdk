@@ -298,7 +298,7 @@
         },
         "orbis-export/tools/build_native_modules.py": {
           "file": "versions/17/orbis-export/tools/build_native_modules.py",
-          "sha256": "cfa76e8809e600cd975950f4e0b8116d504aeb75dc13856a40d9fd5c84e0ee0b"
+          "sha256": "9dd29bc783771262ca0f45a5f20de8a822e189e263223e3896665a2917d5ed28"
         },
         "orbis-export/tools/check_native_package.py": {
           "file": "common/orbis-export/tools/check_native_package.py",
@@ -343,6 +343,10 @@
         "orbis-export/tools/prepare_jvm_link.py": {
           "file": "common/orbis-export/tools/prepare_jvm_link.py",
           "sha256": "5f01541cf3e942ee68ad2664a4c4213a3b9b6447144c75e0267e8af50dc41ecc"
+        },
+        "orbis-export/tools/recorded_link.py": {
+          "file": "common/orbis-export/tools/recorded_link.py",
+          "sha256": "ec3cd55e8fabd62fb32359af8dc6c6d3994dc419bab1fdad95f292c9574da9ac"
         }
       },
       "expected_source_tree": {
@@ -656,7 +660,7 @@
         },
         "orbis-export/tools/build_native_modules.py": {
           "file": "versions/21/orbis-export/tools/build_native_modules.py",
-          "sha256": "f73eb73365efb5335643e7ab8c1d29fde64fc79750f9c0e8831e69b68d714fc0"
+          "sha256": "b534ffd8b41a9b298b2912876add48c7b579618d6274181e0389abdd3b7e1747"
         },
         "orbis-export/tools/check_native_package.py": {
           "file": "common/orbis-export/tools/check_native_package.py",
@@ -701,6 +705,10 @@
         "orbis-export/tools/prepare_jvm_link.py": {
           "file": "common/orbis-export/tools/prepare_jvm_link.py",
           "sha256": "5f01541cf3e942ee68ad2664a4c4213a3b9b6447144c75e0267e8af50dc41ecc"
+        },
+        "orbis-export/tools/recorded_link.py": {
+          "file": "common/orbis-export/tools/recorded_link.py",
+          "sha256": "ec3cd55e8fabd62fb32359af8dc6c6d3994dc419bab1fdad95f292c9574da9ac"
         }
       },
       "expected_source_tree": {
@@ -1018,7 +1026,7 @@
         },
         "orbis-export/tools/build_native_modules.py": {
           "file": "versions/25/orbis-export/tools/build_native_modules.py",
-          "sha256": "ff13a118fdc2f366ed20013e296e25bc21aa099648122d48342b279b41f8e3e2"
+          "sha256": "db07833ef336bdf4de47be5d6dd3f468ab7024b9abf9aadcd822c6233fb475ce"
         },
         "orbis-export/tools/check_native_package.py": {
           "file": "common/orbis-export/tools/check_native_package.py",
@@ -1063,6 +1071,10 @@
         "orbis-export/tools/prepare_jvm_link.py": {
           "file": "common/orbis-export/tools/prepare_jvm_link.py",
           "sha256": "5f01541cf3e942ee68ad2664a4c4213a3b9b6447144c75e0267e8af50dc41ecc"
+        },
+        "orbis-export/tools/recorded_link.py": {
+          "file": "common/orbis-export/tools/recorded_link.py",
+          "sha256": "ec3cd55e8fabd62fb32359af8dc6c6d3994dc419bab1fdad95f292c9574da9ac"
         }
       },
       "expected_source_tree": {

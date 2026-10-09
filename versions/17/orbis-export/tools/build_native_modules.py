@@ -12,6 +12,7 @@ import sys
 import struct
 
 from orbis_native_modules import DESKTOP_MODULES, native_modules
+from recorded_link import recorded_objects
 
 p = argparse.ArgumentParser()
 p.add_argument('--sdk', required=True)
@@ -30,8 +31,8 @@ audit_root = out.parent
 base = jdk.parent / 'support/native/java.base'
 repo = Path('..').resolve()
 
-def run(args):
-    subprocess.run(list(map(str, args)), check=True)
+def run(args, cwd=None):
+    subprocess.run(list(map(str, args)), check=True, cwd=cwd)
 
 run([sdk/'bin/orbis-clang', '--target=x86_64-pc-freebsd12-elf', '-fPIC',
      '-isysroot', tc, '-isystem', tc/'include', '-c', 'tools/native_dlfcn.c',
@@ -113,8 +114,7 @@ for name, deps in modules:
         object_list = (jdk.parent/
                        'hotspot/variant-server/libjvm/objs/'
                        '_BUILD_LIBJVM_objectfilenames.txt')
-        objs = [Path(arg) for arg in shlex.split(object_list.read_text())
-                if arg.endswith('.o')]
+        objs = recorded_objects(shlex.split(object_list.read_text()), jdk.parent)
     else:
         if name in DESKTOP_MODULES:
             module_base = jdk.parent / 'support/native/java.desktop'
@@ -130,12 +130,7 @@ for name, deps in modules:
         if len(records) != 1:
             raise RuntimeError(f'Expected one recorded link command for {name}: {records}')
         args = shlex.split(records[0].read_text())
-        objs = []
-        for arg in args:
-            if arg.startswith('@'):
-                objs.extend(shlex.split(Path(arg[1:]).read_text()))
-            elif arg.endswith('.o'):
-                objs.append(arg)
+        objs = recorded_objects(args, jdk.parent)
         if name in ('management', 'management_ext'):
             # create-fself considers undefined symbols in dependency ELFs
             # when assigning NIDs.  libjava and libmanagement both mention
@@ -171,7 +166,7 @@ for name, deps in modules:
                         repo/'src/java.base/bsd/native/libnet/bsd_close.c'))
                 else:
                     compile_args.append(arg)
-            run(compile_args)
+            run(compile_args, cwd=jdk.parent)
             objs.append(str(out/'bsd_close.o'))
     if not objs:
         raise RuntimeError(f'No objects for {name}')
