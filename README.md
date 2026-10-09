@@ -52,6 +52,12 @@ python3 build.py build 21 --boot-jdk /path/to/host-jdk21 --sdk /path/to/ps4-payl
 python3 build.py build 25 --boot-jdk /path/to/host-jdk25 --sdk /path/to/ps4-payload-sdk --toolchain /path/to/PS4Toolchain
 ```
 
+For a sequential build of all three, set `BOOT_JDK17`, `BOOT_JDK21`, and `BOOT_JDK25` to their host JDK directories and run:
+
+```sh
+tools/rebuild_all.sh --sdk /path/to/ps4-payload-sdk --toolchain /path/to/PS4Toolchain
+```
+
 `build` configures the PS4 target, runs the actual OpenJDK `images` build, relinks/signs the native modules, creates the desktop runtime image, runs package/binary checks, and copies the audited runtime to `output/jdk17`, `output/jdk21` or `output/jdk25`. It stops on any failed step. It does not package or upload the launcher.
 
 For separate stages:
