@@ -1,0 +1,1075 @@
+{
+  "schema": 1,
+  "versions": {
+    "17": {
+      "url": "https://github.com/battleblow/jdk17u.git",
+      "base": "4393b4c31a406bdf46aea1c092c1828846a5b962",
+      "port_revision": "bed874559f78f1c55a04428bbd7e5da9ddda27d4",
+      "patches": [
+        {
+          "file": "patches/17/0001-orbis-port.patch",
+          "sha256": "bffbe23c8af5dcb619b5307316e2e32395bb2181777dbf964b36a1843fc5adef"
+        }
+      ],
+      "export_files": {
+        "orbis-export/.gitignore": {
+          "file": "common/orbis-export/.gitignore",
+          "sha256": "eef7f7f1e361660fb53ab709f82527cffb6048a0fe970cfff8d532ae916bb7da"
+        },
+        "orbis-export/Makefile": {
+          "file": "versions/17/orbis-export/Makefile",
+          "sha256": "8c219f7cb47dc3e28d70abecf598dd4db6c927a4abd6c1f6156b03ea6e9cfe41"
+        },
+        "orbis-export/README.md": {
+          "file": "versions/17/orbis-export/README.md",
+          "sha256": "1f4e98765ee210ff9d47ba8d7334e601287e477388f540f8b09ac227e9ddb053"
+        },
+        "orbis-export/runtime-data/desktop/fonts/DejaVuSans.ttf": {
+          "file": "common/orbis-export/runtime-data/desktop/fonts/DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954"
+        },
+        "orbis-export/runtime-data/desktop/fonts/LICENSE": {
+          "file": "common/orbis-export/runtime-data/desktop/fonts/LICENSE",
+          "sha256": "7a083b136e64d064794c3419751e5c7dd10d2f64c108fe5ba161eae5e5958a93"
+        },
+        "orbis-export/runtime-data/desktop/fonts/README.md": {
+          "file": "common/orbis-export/runtime-data/desktop/fonts/README.md",
+          "sha256": "64f175adbba3af5fb8fc453b70bf0b533b7a5d3882c29dc88773b70d6ed06313"
+        },
+        "orbis-export/tests/orbis_direct_memory_arena_test.cpp": {
+          "file": "common/orbis-export/tests/orbis_direct_memory_arena_test.cpp",
+          "sha256": "2801ee576fd6fa8d6861328a1fb9f96a5eba54a0673da6ef4d158465574449df"
+        },
+        "orbis-export/tests/orbis_thread_stack_registry_test.cpp": {
+          "file": "common/orbis-export/tests/orbis_thread_stack_registry_test.cpp",
+          "sha256": "27d5d5ae84f84782c7fd8b1d1c8e3d5bab9a657b0295c4ea2a4f5b576cbdb046"
+        },
+        "orbis-export/tests/run_checks.py": {
+          "file": "versions/17/orbis-export/tests/run_checks.py",
+          "sha256": "ab61b60c45db25193a2b96391de358dabf416d0365c895d9964b39e4b97e28e7"
+        },
+        "orbis-export/tests/test_audit_orbis_binaries.py": {
+          "file": "common/orbis-export/tests/test_audit_orbis_binaries.py",
+          "sha256": "67cb82ea1eaddc2c80c5b21d96bc11c137f0b2b4e0f5a5501b313cde24147ba4"
+        },
+        "orbis-export/tests/test_audit_orbis_sources.py": {
+          "file": "common/orbis-export/tests/test_audit_orbis_sources.py",
+          "sha256": "492abd0fadfa64570a6a6bad331335847d03e168338aa474068dbcd51e122294"
+        },
+        "orbis-export/tests/test_build_graph.py": {
+          "file": "common/orbis-export/tests/test_build_graph.py",
+          "sha256": "66828844511e122145dd707c49a1bb64374837998a4bb63dd41b90fba26a739f"
+        },
+        "orbis-export/tests/test_export_build_inputs.py": {
+          "file": "common/orbis-export/tests/test_export_build_inputs.py",
+          "sha256": "f810e77f60a067010674083c899e3c9adbc0fb0ad0bf6b0cec10980cb8133214"
+        },
+        "orbis-export/tests/test_export_safety.py": {
+          "file": "common/orbis-export/tests/test_export_safety.py",
+          "sha256": "05e71deafad4dd6ca0a23ce84c61e3336f6b34b54d04eee06109371c02703721"
+        },
+        "orbis-export/tests/test_jaas_native_module.py": {
+          "file": "common/orbis-export/tests/test_jaas_native_module.py",
+          "sha256": "2530635cea7570d9fdc83fd18bce359716762b947974053426196b94ca1514cb"
+        },
+        "orbis-export/tests/test_native_dependency_order.py": {
+          "file": "common/orbis-export/tests/test_native_dependency_order.py",
+          "sha256": "5e1d36febcdd658d19b3593ccbbc14085ee290b51e736232e523ccd096430508"
+        },
+        "orbis-export/tests/test_native_loader.py": {
+          "file": "common/orbis-export/tests/test_native_loader.py",
+          "sha256": "29022c301ad1e7f4ae5086aa16e49d351e27eb701cfff5e216d326f7862e405d"
+        },
+        "orbis-export/tests/test_native_runtime_environment.py": {
+          "file": "common/orbis-export/tests/test_native_runtime_environment.py",
+          "sha256": "97db04d8f39878e5a07526bd10adb8f34abd7b0932ec862a9c5ec9c531247668"
+        },
+        "orbis-export/tests/test_native_runtime_location.py": {
+          "file": "common/orbis-export/tests/test_native_runtime_location.py",
+          "sha256": "e60d7a35d235ef556c57261a720dc00df88fa5275246d62b11365aeeb62ea77d"
+        },
+        "orbis-export/tests/test_nio_filesystem_diagnostics.py": {
+          "file": "common/orbis-export/tests/test_nio_filesystem_diagnostics.py",
+          "sha256": "d601a94484bb1277bdcec311382304903c8f9ba63fba1d286f4f08c11b4c06c5"
+        },
+        "orbis-export/tests/test_orbis_clock_abi.py": {
+          "file": "common/orbis-export/tests/test_orbis_clock_abi.py",
+          "sha256": "49bcec2231890f0cf392f24867ba4039ac76406578e717b8a5a5391637b48b87"
+        },
+        "orbis-export/tests/test_orbis_condvar_clock.py": {
+          "file": "common/orbis-export/tests/test_orbis_condvar_clock.py",
+          "sha256": "1c8821154bf64ada4f1069e904f0650e1cbacc845071146e197459b36ec70b6d"
+        },
+        "orbis-export/tests/test_orbis_delete_errno_source.py": {
+          "file": "common/orbis-export/tests/test_orbis_delete_errno_source.py",
+          "sha256": "3b2f01ab62dffdb486e37a40de7b3fc79f1b579e1e1509d8bd3b6e8efb0f10ef"
+        },
+        "orbis-export/tests/test_orbis_direct_memory_arena.py": {
+          "file": "common/orbis-export/tests/test_orbis_direct_memory_arena.py",
+          "sha256": "18a4dc9066e83807fc34ebb8044ea31e92c4c2f30b3dc26138bb6f4fa46f6ee8"
+        },
+        "orbis-export/tests/test_orbis_dll_load_diagnostics.py": {
+          "file": "common/orbis-export/tests/test_orbis_dll_load_diagnostics.py",
+          "sha256": "ed378f8f916e43a448ceddb41d5d5783778f3d9b1688094f3af6511c24c47bd6"
+        },
+        "orbis-export/tests/test_orbis_dns_resolver.py": {
+          "file": "common/orbis-export/tests/test_orbis_dns_resolver.py",
+          "sha256": "66f0d931f098a54a34e8dd4dca98d4777298070688583000ae8acd3d3bcf4d81"
+        },
+        "orbis-export/tests/test_orbis_file_channel_size.py": {
+          "file": "versions/17/orbis-export/tests/test_orbis_file_channel_size.py",
+          "sha256": "cd7155d59aab0ca35d6a28ffdf12e9518759f3a6dfe51df247f2a7426325189d"
+        },
+        "orbis-export/tests/test_orbis_file_length.py": {
+          "file": "common/orbis-export/tests/test_orbis_file_length.py",
+          "sha256": "6ea2fd5b38dd2b977e3ed09ef3b4490c730e0cfcd7f8fe0670bef7472e4331ea"
+        },
+        "orbis-export/tests/test_orbis_file_relative_paths.py": {
+          "file": "common/orbis-export/tests/test_orbis_file_relative_paths.py",
+          "sha256": "5fddb588b7bea477447cfedabf07977cd0f0ca4749d01ce515f002e9b3e16567"
+        },
+        "orbis-export/tests/test_orbis_jimage_diagnostics.py": {
+          "file": "common/orbis-export/tests/test_orbis_jimage_diagnostics.py",
+          "sha256": "56d41dfc07edd5f9f726506aebd0324fcfba22cb472f549bd46f05384fe3c2d8"
+        },
+        "orbis-export/tests/test_orbis_lstat_source.py": {
+          "file": "common/orbis-export/tests/test_orbis_lstat_source.py",
+          "sha256": "1d822a21fbae511bf83298b63d46fe077aab085379af6bd97c485a92a3737d6d"
+        },
+        "orbis-export/tests/test_orbis_management_metrics.py": {
+          "file": "common/orbis-export/tests/test_orbis_management_metrics.py",
+          "sha256": "a40579ec45a63f54383a45d5a5362edd25fc50288148a85cfc69431d06636c0f"
+        },
+        "orbis-export/tests/test_orbis_metaspace_reservation_fallback.py": {
+          "file": "versions/17/orbis-export/tests/test_orbis_metaspace_reservation_fallback.py",
+          "sha256": "2184d1727f52f7ed91c742d3d5d8eff43b963bb777c55c0bfa0a4062b7db204f"
+        },
+        "orbis-export/tests/test_orbis_missing_errno.py": {
+          "file": "common/orbis-export/tests/test_orbis_missing_errno.py",
+          "sha256": "d21fef0fe4e090662f83a87828e5c64b9891201fe9306b6eaf8fdf147b8cbd1e"
+        },
+        "orbis-export/tests/test_orbis_nio_access.py": {
+          "file": "versions/17/orbis-export/tests/test_orbis_nio_access.py",
+          "sha256": "10fcfc39fcc4e9bea7871e5a613a668960dfc36549a8395893298cbe6365966e"
+        },
+        "orbis-export/tests/test_orbis_nio_file_lock.py": {
+          "file": "versions/17/orbis-export/tests/test_orbis_nio_file_lock.py",
+          "sha256": "82ddb2ce67217ec508e1f0dcadc61d3abbf6c46ef0be6d235452fa694a194d23"
+        },
+        "orbis-export/tests/test_orbis_nio_nonblocking.py": {
+          "file": "common/orbis-export/tests/test_orbis_nio_nonblocking.py",
+          "sha256": "44a37cf61ec7ac569d4eaf303b3d5ae48edd97b05085964390e1212963e2aab2"
+        },
+        "orbis-export/tests/test_orbis_nio_relative_paths.py": {
+          "file": "common/orbis-export/tests/test_orbis_nio_relative_paths.py",
+          "sha256": "720fb2522fe8982cc9fdd9f2a725c0344b4dc64fb6160d5fac599f91a365544b"
+        },
+        "orbis-export/tests/test_orbis_nio_tcp_nodelay.py": {
+          "file": "common/orbis-export/tests/test_orbis_nio_tcp_nodelay.py",
+          "sha256": "9a9ba269353cbc398e6618b7af0692fdb06ca0d175b19b12fac7353b7d6a3a21"
+        },
+        "orbis-export/tests/test_orbis_no_app0_writes.py": {
+          "file": "versions/17/orbis-export/tests/test_orbis_no_app0_writes.py",
+          "sha256": "b82f7adc408abaf95e8e05c5dd88934a72e643eacf09c4fa25182dba43d79111"
+        },
+        "orbis-export/tests/test_orbis_pipe_fallback.py": {
+          "file": "common/orbis-export/tests/test_orbis_pipe_fallback.py",
+          "sha256": "b051cbaed3c3ba64be5ed92ddc5512babf7b4b48a8080f5df6dc3219d0c6b72a"
+        },
+        "orbis-export/tests/test_orbis_process_builder_contract.py": {
+          "file": "versions/17/orbis-export/tests/test_orbis_process_builder_contract.py",
+          "sha256": "56221423a57f17952e7e0fef39be4af887efffd202291d897e43516d3aa7492d"
+        },
+        "orbis-export/tests/test_orbis_prx_tls.py": {
+          "file": "common/orbis-export/tests/test_orbis_prx_tls.py",
+          "sha256": "141a988ed52d609232d1903c9a246cf0a99c4a314a5ba47642a3d7455da2554c"
+        },
+        "orbis-export/tests/test_orbis_release_compiler_guard.py": {
+          "file": "common/orbis-export/tests/test_orbis_release_compiler_guard.py",
+          "sha256": "67603f0383f5d5366163ff00c27b0817d48e409cd24e444102efd61a2b64d62d"
+        },
+        "orbis-export/tests/test_orbis_runtime_binary.py": {
+          "file": "common/orbis-export/tests/test_orbis_runtime_binary.py",
+          "sha256": "eac9860a34e512bb035bf965fd5cc82f041b126e5bcfd36f8b5a3dc83273569b"
+        },
+        "orbis-export/tests/test_orbis_runtime_source.py": {
+          "file": "versions/17/orbis-export/tests/test_orbis_runtime_source.py",
+          "sha256": "8923030b938c8e0be75a5a245f3b0e66e9b16483efc380c7347a162d95b8dcb4"
+        },
+        "orbis-export/tests/test_orbis_signal_abi.py": {
+          "file": "common/orbis-export/tests/test_orbis_signal_abi.py",
+          "sha256": "ce1647cdaaddbd4c94669fe6046e8717537b5e350542588d602fafd19402cd1a"
+        },
+        "orbis-export/tests/test_orbis_signal_diagnostic.py": {
+          "file": "common/orbis-export/tests/test_orbis_signal_diagnostic.py",
+          "sha256": "4aa465b336f78b7f3f1372ac0a424f1e6624e321d7c32f2a8d428c0b3385fef2"
+        },
+        "orbis-export/tests/test_orbis_signal_diagnostic_binary.py": {
+          "file": "common/orbis-export/tests/test_orbis_signal_diagnostic_binary.py",
+          "sha256": "d8140ca651f9398f9f4468d96f3b175d364e0482e05b74917cb445003d7cf7b8"
+        },
+        "orbis-export/tests/test_orbis_socket_available.py": {
+          "file": "common/orbis-export/tests/test_orbis_socket_available.py",
+          "sha256": "a200ad9cec03318385295a933b1aad2f827ed64a928ab6eb8e268b35b0fd6d78"
+        },
+        "orbis-export/tests/test_orbis_stat_abi.py": {
+          "file": "versions/17/orbis-export/tests/test_orbis_stat_abi.py",
+          "sha256": "44310ee74e5e88c99c8488795a2de0fa4defdd66dcc1511d178c396e2608342c"
+        },
+        "orbis-export/tests/test_orbis_thread_stack_registry.py": {
+          "file": "common/orbis-export/tests/test_orbis_thread_stack_registry.py",
+          "sha256": "b650cf1101719676467453aa64aa8080dcf6db77eb825cece117491ee8dd8709"
+        },
+        "orbis-export/tests/test_orbis_timed_parking.py": {
+          "file": "versions/17/orbis-export/tests/test_orbis_timed_parking.py",
+          "sha256": "3fcbcae70515b0f15595d28a9886007e75ee4c05d28286703e5d1aac372ab439"
+        },
+        "orbis-export/tests/test_orbis_vm_phase_diagnostics.py": {
+          "file": "versions/17/orbis-export/tests/test_orbis_vm_phase_diagnostics.py",
+          "sha256": "7fd86571cfccf8e8161b0ded4a4ac7d16477abc47ccc8b661f64f07789f78030"
+        },
+        "orbis-export/tests/test_prx_initializers.py": {
+          "file": "common/orbis-export/tests/test_prx_initializers.py",
+          "sha256": "96bc8ab8ce605d17da998fd744cf6270e80112eddfa8e2442a7aa07942150faa"
+        },
+        "orbis-export/tests/test_random_access_diagnostics.py": {
+          "file": "common/orbis-export/tests/test_random_access_diagnostics.py",
+          "sha256": "5bb3f2b89e3e58459c65f5f2ab2cac0f1ee54bc70d6ef1f5c1a686bc8d8bcb9e"
+        },
+        "orbis-export/tests/test_runtime_export.py": {
+          "file": "common/orbis-export/tests/test_runtime_export.py",
+          "sha256": "d38b614cfe6758637c2294aea1dedea7c70f974d8a78e99c2b371d76bd42f6c4"
+        },
+        "orbis-export/tests/test_runtime_image_modules.py": {
+          "file": "common/orbis-export/tests/test_runtime_image_modules.py",
+          "sha256": "a7dc6ca0971bc338dde985665d2153ff1aa08717f17872ba1de8d918a6d1f49d"
+        },
+        "orbis-export/tests/test_system_module_names.py": {
+          "file": "common/orbis-export/tests/test_system_module_names.py",
+          "sha256": "7df0390f8aaafff3d3bf932161cdfa78ac4da91b37ee297cad77b15634174e4e"
+        },
+        "orbis-export/tests/test_trace_redirect.py": {
+          "file": "common/orbis-export/tests/test_trace_redirect.py",
+          "sha256": "d5a995931fa27187fbee407591607ab58fff3dd3fc29e33629546fc4faa83344"
+        },
+        "orbis-export/tests/test_vmmap_trace.py": {
+          "file": "common/orbis-export/tests/test_vmmap_trace.py",
+          "sha256": "7e2f225729aed529ce4dedd2e4f1aacbbe412604d480e2517b19a356bd379387"
+        },
+        "orbis-export/tests/testdata/audit_binaries/manifest.json": {
+          "file": "common/orbis-export/tests/testdata/audit_binaries/manifest.json",
+          "sha256": "d7cf9e2cf6d6987dcf238238f735725d30226730da9314ca722958a281e05094"
+        },
+        "orbis-export/tests/testdata/audit_sources/direct.c": {
+          "file": "common/orbis-export/tests/testdata/audit_sources/direct.c",
+          "sha256": "d814aa2e817faf3c431e6870ae2556fdfc6eedcb103ba51a786ab8269ed9b828"
+        },
+        "orbis-export/tests/testdata/audit_sources/prohibited.c": {
+          "file": "common/orbis-export/tests/testdata/audit_sources/prohibited.c",
+          "sha256": "c92c39f4e710bc5dd6bf883744d1299e9fc4b1055106884329faf30e8b59a203"
+        },
+        "orbis-export/tests/testdata/orbis_missing_errno_test.c": {
+          "file": "common/orbis-export/tests/testdata/orbis_missing_errno_test.c",
+          "sha256": "04f6b4d15be222d900ea0037380b9a9a6d31bd2b6a36ffb6855aa47c50498541"
+        },
+        "orbis-export/tests/testdata/orbis_nonblocking_test.c": {
+          "file": "versions/17/orbis-export/tests/testdata/orbis_nonblocking_test.c",
+          "sha256": "9b9a875bb9e063890b860197b7d28c04e78dcc69daf9626b698ffb4fda3f12b0"
+        },
+        "orbis-export/tests/testdata/orbis_prx_tls_driver.c": {
+          "file": "common/orbis-export/tests/testdata/orbis_prx_tls_driver.c",
+          "sha256": "51e1486ec8bca274fd5d07c46990d017c8903622c8793e70aae9157280992b53"
+        },
+        "orbis-export/tests/testdata/orbis_prx_tls_module.c": {
+          "file": "common/orbis-export/tests/testdata/orbis_prx_tls_module.c",
+          "sha256": "0b2e17882f0bc6d6d6daaa134a0bd1b45c357df21fbd44056ea772ba713a7b93"
+        },
+        "orbis-export/tools/audit_native_providers.py": {
+          "file": "common/orbis-export/tools/audit_native_providers.py",
+          "sha256": "6a5a012746dff54c981709d448a6dcc4b6c21656af5d6249b70a002d2c85f652"
+        },
+        "orbis-export/tools/audit_orbis_binaries.py": {
+          "file": "common/orbis-export/tools/audit_orbis_binaries.py",
+          "sha256": "fa4f6770354157c28b4f6208c75b0e6bd6964d94a76744dfcb46a52d25962874"
+        },
+        "orbis-export/tools/audit_orbis_sources.py": {
+          "file": "common/orbis-export/tools/audit_orbis_sources.py",
+          "sha256": "6259336f9b56d15c44ad1d7a965dfb22e19a452ef7e8fdee15b63f002196b5c0"
+        },
+        "orbis-export/tools/build_native_modules.py": {
+          "file": "versions/17/orbis-export/tools/build_native_modules.py",
+          "sha256": "cfa76e8809e600cd975950f4e0b8116d504aeb75dc13856a40d9fd5c84e0ee0b"
+        },
+        "orbis-export/tools/check_native_package.py": {
+          "file": "common/orbis-export/tools/check_native_package.py",
+          "sha256": "a51aada24f5a7a41770b61d28bacd97795e57dad3e86eef78876ee2ddb6caf96"
+        },
+        "orbis-export/tools/export_jdk.py": {
+          "file": "common/orbis-export/tools/export_jdk.py",
+          "sha256": "308987c2c22b4de1b6fbfd0e00035c819162b46f7a2f87f0c73db45e5cca3129"
+        },
+        "orbis-export/tools/native_dlfcn.c": {
+          "file": "common/orbis-export/tools/native_dlfcn.c",
+          "sha256": "5b93390c765704ae24997a55a1c7d3df30b48ebb956323f272199bc49cdc1faa"
+        },
+        "orbis-export/tools/orbis_initializers.c": {
+          "file": "common/orbis-export/tools/orbis_initializers.c",
+          "sha256": "464bfe963a5d69d3e2a55fbe7bb197df5a06e1d64c345cace2baabdf30b2ea9b"
+        },
+        "orbis-export/tools/orbis_native_modules.py": {
+          "file": "common/orbis-export/tools/orbis_native_modules.py",
+          "sha256": "401d14a68757d6f3f896e457584d64d25fc207306f1adf8088642012feaae8bd"
+        },
+        "orbis-export/tools/orbis_native_policy.json": {
+          "file": "common/orbis-export/tools/orbis_native_policy.json",
+          "sha256": "5b320afed26e46d1924c385982ae1324d7612cb3a725ee00a7391f3fec9c5988"
+        },
+        "orbis-export/tools/orbis_prx_tls.c": {
+          "file": "common/orbis-export/tools/orbis_prx_tls.c",
+          "sha256": "c23cdd69b4026ab9ab42f68855ab8f8d24dc2ec6e4bee614e73892a1c80877f1"
+        },
+        "orbis-export/tools/orbis_runtime.c": {
+          "file": "versions/17/orbis-export/tools/orbis_runtime.c",
+          "sha256": "a17defb0590bdcb4c2b2fcd084b9f53368cf8e7142b14e561e3a231626f34df5"
+        },
+        "orbis-export/tools/orbis_runtime.h": {
+          "file": "common/orbis-export/tools/orbis_runtime.h",
+          "sha256": "21473a9a64ed46997733a85107b6231ce75b8013ad65bab8b538ddea240cfa71"
+        },
+        "orbis-export/tools/orbis_tls.c": {
+          "file": "common/orbis-export/tools/orbis_tls.c",
+          "sha256": "9b181b41ac2a689302140aa5267446c3bbc7a72dcc1bea1ade8a298943d6d503"
+        },
+        "orbis-export/tools/prepare_jvm_link.py": {
+          "file": "common/orbis-export/tools/prepare_jvm_link.py",
+          "sha256": "5f01541cf3e942ee68ad2664a4c4213a3b9b6447144c75e0267e8af50dc41ecc"
+        }
+      },
+      "expected_source_tree": {
+        "src": "5bf71f460c39e3b139806d928f076647844caec7",
+        "make": "a3be628297f6aef94ef077a5c2df5b866ba90119",
+        "test": "c4dafb1cd22c60f50a14c3ff85c0ffc0df1db99a"
+      }
+    },
+    "21": {
+      "url": "https://github.com/battleblow/jdk21u.git",
+      "base": "0b036c3f604f792a3c445d141bb9955ec6523c03",
+      "port_revision": "4d02099a2f12ea5e1c84f91b60911538bc6ba6bf",
+      "patches": [
+        {
+          "file": "patches/21/0001-orbis-port.patch",
+          "sha256": "97e227cc3e30195fb49a5d86476e3bcf98308c8408dfaf56a2a2277a3f94192c"
+        }
+      ],
+      "export_files": {
+        "orbis-export/.gitignore": {
+          "file": "common/orbis-export/.gitignore",
+          "sha256": "eef7f7f1e361660fb53ab709f82527cffb6048a0fe970cfff8d532ae916bb7da"
+        },
+        "orbis-export/Makefile": {
+          "file": "versions/21/orbis-export/Makefile",
+          "sha256": "565a9024970a31ce087bbce24dae48c8b9ab5d00090e65914013030a8d9f85aa"
+        },
+        "orbis-export/README.md": {
+          "file": "versions/21/orbis-export/README.md",
+          "sha256": "341de9263fc2bb33e979fa0b8f431951e98e7914cf3d4f0aae0be147b17f43ab"
+        },
+        "orbis-export/runtime-data/desktop/fonts/DejaVuSans.ttf": {
+          "file": "common/orbis-export/runtime-data/desktop/fonts/DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954"
+        },
+        "orbis-export/runtime-data/desktop/fonts/LICENSE": {
+          "file": "common/orbis-export/runtime-data/desktop/fonts/LICENSE",
+          "sha256": "7a083b136e64d064794c3419751e5c7dd10d2f64c108fe5ba161eae5e5958a93"
+        },
+        "orbis-export/runtime-data/desktop/fonts/README.md": {
+          "file": "common/orbis-export/runtime-data/desktop/fonts/README.md",
+          "sha256": "64f175adbba3af5fb8fc453b70bf0b533b7a5d3882c29dc88773b70d6ed06313"
+        },
+        "orbis-export/tests/orbis_direct_memory_arena_test.cpp": {
+          "file": "common/orbis-export/tests/orbis_direct_memory_arena_test.cpp",
+          "sha256": "2801ee576fd6fa8d6861328a1fb9f96a5eba54a0673da6ef4d158465574449df"
+        },
+        "orbis-export/tests/orbis_thread_stack_registry_test.cpp": {
+          "file": "common/orbis-export/tests/orbis_thread_stack_registry_test.cpp",
+          "sha256": "27d5d5ae84f84782c7fd8b1d1c8e3d5bab9a657b0295c4ea2a4f5b576cbdb046"
+        },
+        "orbis-export/tests/run_checks.py": {
+          "file": "versions/21/orbis-export/tests/run_checks.py",
+          "sha256": "e7cc4f7a7cfccd1096db3217759efc88f34b7d599518dc97763d497912ee2d53"
+        },
+        "orbis-export/tests/test_audit_orbis_binaries.py": {
+          "file": "common/orbis-export/tests/test_audit_orbis_binaries.py",
+          "sha256": "67cb82ea1eaddc2c80c5b21d96bc11c137f0b2b4e0f5a5501b313cde24147ba4"
+        },
+        "orbis-export/tests/test_audit_orbis_sources.py": {
+          "file": "common/orbis-export/tests/test_audit_orbis_sources.py",
+          "sha256": "492abd0fadfa64570a6a6bad331335847d03e168338aa474068dbcd51e122294"
+        },
+        "orbis-export/tests/test_build_graph.py": {
+          "file": "common/orbis-export/tests/test_build_graph.py",
+          "sha256": "66828844511e122145dd707c49a1bb64374837998a4bb63dd41b90fba26a739f"
+        },
+        "orbis-export/tests/test_export_build_inputs.py": {
+          "file": "common/orbis-export/tests/test_export_build_inputs.py",
+          "sha256": "f810e77f60a067010674083c899e3c9adbc0fb0ad0bf6b0cec10980cb8133214"
+        },
+        "orbis-export/tests/test_export_safety.py": {
+          "file": "common/orbis-export/tests/test_export_safety.py",
+          "sha256": "05e71deafad4dd6ca0a23ce84c61e3336f6b34b54d04eee06109371c02703721"
+        },
+        "orbis-export/tests/test_jaas_native_module.py": {
+          "file": "common/orbis-export/tests/test_jaas_native_module.py",
+          "sha256": "2530635cea7570d9fdc83fd18bce359716762b947974053426196b94ca1514cb"
+        },
+        "orbis-export/tests/test_native_dependency_order.py": {
+          "file": "common/orbis-export/tests/test_native_dependency_order.py",
+          "sha256": "5e1d36febcdd658d19b3593ccbbc14085ee290b51e736232e523ccd096430508"
+        },
+        "orbis-export/tests/test_native_loader.py": {
+          "file": "common/orbis-export/tests/test_native_loader.py",
+          "sha256": "29022c301ad1e7f4ae5086aa16e49d351e27eb701cfff5e216d326f7862e405d"
+        },
+        "orbis-export/tests/test_native_runtime_environment.py": {
+          "file": "common/orbis-export/tests/test_native_runtime_environment.py",
+          "sha256": "97db04d8f39878e5a07526bd10adb8f34abd7b0932ec862a9c5ec9c531247668"
+        },
+        "orbis-export/tests/test_native_runtime_location.py": {
+          "file": "common/orbis-export/tests/test_native_runtime_location.py",
+          "sha256": "e60d7a35d235ef556c57261a720dc00df88fa5275246d62b11365aeeb62ea77d"
+        },
+        "orbis-export/tests/test_nio_filesystem_diagnostics.py": {
+          "file": "common/orbis-export/tests/test_nio_filesystem_diagnostics.py",
+          "sha256": "d601a94484bb1277bdcec311382304903c8f9ba63fba1d286f4f08c11b4c06c5"
+        },
+        "orbis-export/tests/test_orbis_clock_abi.py": {
+          "file": "common/orbis-export/tests/test_orbis_clock_abi.py",
+          "sha256": "49bcec2231890f0cf392f24867ba4039ac76406578e717b8a5a5391637b48b87"
+        },
+        "orbis-export/tests/test_orbis_condvar_clock.py": {
+          "file": "common/orbis-export/tests/test_orbis_condvar_clock.py",
+          "sha256": "1c8821154bf64ada4f1069e904f0650e1cbacc845071146e197459b36ec70b6d"
+        },
+        "orbis-export/tests/test_orbis_delete_errno_source.py": {
+          "file": "common/orbis-export/tests/test_orbis_delete_errno_source.py",
+          "sha256": "3b2f01ab62dffdb486e37a40de7b3fc79f1b579e1e1509d8bd3b6e8efb0f10ef"
+        },
+        "orbis-export/tests/test_orbis_direct_memory_arena.py": {
+          "file": "common/orbis-export/tests/test_orbis_direct_memory_arena.py",
+          "sha256": "18a4dc9066e83807fc34ebb8044ea31e92c4c2f30b3dc26138bb6f4fa46f6ee8"
+        },
+        "orbis-export/tests/test_orbis_dll_load_diagnostics.py": {
+          "file": "common/orbis-export/tests/test_orbis_dll_load_diagnostics.py",
+          "sha256": "ed378f8f916e43a448ceddb41d5d5783778f3d9b1688094f3af6511c24c47bd6"
+        },
+        "orbis-export/tests/test_orbis_dns_resolver.py": {
+          "file": "common/orbis-export/tests/test_orbis_dns_resolver.py",
+          "sha256": "66f0d931f098a54a34e8dd4dca98d4777298070688583000ae8acd3d3bcf4d81"
+        },
+        "orbis-export/tests/test_orbis_file_channel_size.py": {
+          "file": "versions/21/orbis-export/tests/test_orbis_file_channel_size.py",
+          "sha256": "c081c114e511b214344532c838115063f87accfef46dd01c1b9efee86f13c877"
+        },
+        "orbis-export/tests/test_orbis_file_length.py": {
+          "file": "common/orbis-export/tests/test_orbis_file_length.py",
+          "sha256": "6ea2fd5b38dd2b977e3ed09ef3b4490c730e0cfcd7f8fe0670bef7472e4331ea"
+        },
+        "orbis-export/tests/test_orbis_file_relative_paths.py": {
+          "file": "common/orbis-export/tests/test_orbis_file_relative_paths.py",
+          "sha256": "5fddb588b7bea477447cfedabf07977cd0f0ca4749d01ce515f002e9b3e16567"
+        },
+        "orbis-export/tests/test_orbis_jimage_diagnostics.py": {
+          "file": "common/orbis-export/tests/test_orbis_jimage_diagnostics.py",
+          "sha256": "56d41dfc07edd5f9f726506aebd0324fcfba22cb472f549bd46f05384fe3c2d8"
+        },
+        "orbis-export/tests/test_orbis_lstat_source.py": {
+          "file": "common/orbis-export/tests/test_orbis_lstat_source.py",
+          "sha256": "1d822a21fbae511bf83298b63d46fe077aab085379af6bd97c485a92a3737d6d"
+        },
+        "orbis-export/tests/test_orbis_management_metrics.py": {
+          "file": "common/orbis-export/tests/test_orbis_management_metrics.py",
+          "sha256": "a40579ec45a63f54383a45d5a5362edd25fc50288148a85cfc69431d06636c0f"
+        },
+        "orbis-export/tests/test_orbis_metaspace_reservation_fallback.py": {
+          "file": "versions/21/orbis-export/tests/test_orbis_metaspace_reservation_fallback.py",
+          "sha256": "2184d1727f52f7ed91c742d3d5d8eff43b963bb777c55c0bfa0a4062b7db204f"
+        },
+        "orbis-export/tests/test_orbis_missing_errno.py": {
+          "file": "common/orbis-export/tests/test_orbis_missing_errno.py",
+          "sha256": "d21fef0fe4e090662f83a87828e5c64b9891201fe9306b6eaf8fdf147b8cbd1e"
+        },
+        "orbis-export/tests/test_orbis_nio_access.py": {
+          "file": "versions/21/orbis-export/tests/test_orbis_nio_access.py",
+          "sha256": "e73212ba34bdfdbe8b1e7fa217d2d0b8f430cd65f3839c5f5bcd6809e111646b"
+        },
+        "orbis-export/tests/test_orbis_nio_file_lock.py": {
+          "file": "versions/21/orbis-export/tests/test_orbis_nio_file_lock.py",
+          "sha256": "45b1bb640dd2a2ded93bdb31e1e011299eebd5906ad292cfa2a29f70ee383137"
+        },
+        "orbis-export/tests/test_orbis_nio_nonblocking.py": {
+          "file": "common/orbis-export/tests/test_orbis_nio_nonblocking.py",
+          "sha256": "44a37cf61ec7ac569d4eaf303b3d5ae48edd97b05085964390e1212963e2aab2"
+        },
+        "orbis-export/tests/test_orbis_nio_relative_paths.py": {
+          "file": "common/orbis-export/tests/test_orbis_nio_relative_paths.py",
+          "sha256": "720fb2522fe8982cc9fdd9f2a725c0344b4dc64fb6160d5fac599f91a365544b"
+        },
+        "orbis-export/tests/test_orbis_nio_tcp_nodelay.py": {
+          "file": "common/orbis-export/tests/test_orbis_nio_tcp_nodelay.py",
+          "sha256": "9a9ba269353cbc398e6618b7af0692fdb06ca0d175b19b12fac7353b7d6a3a21"
+        },
+        "orbis-export/tests/test_orbis_no_app0_writes.py": {
+          "file": "versions/21/orbis-export/tests/test_orbis_no_app0_writes.py",
+          "sha256": "772ee3b63f788cb38375c5a1dec332c721872711cd59fe897c0fd1b061bc2812"
+        },
+        "orbis-export/tests/test_orbis_pipe_fallback.py": {
+          "file": "common/orbis-export/tests/test_orbis_pipe_fallback.py",
+          "sha256": "b051cbaed3c3ba64be5ed92ddc5512babf7b4b48a8080f5df6dc3219d0c6b72a"
+        },
+        "orbis-export/tests/test_orbis_process_builder_contract.py": {
+          "file": "versions/21/orbis-export/tests/test_orbis_process_builder_contract.py",
+          "sha256": "f05c2c55850efa94d06527b7b1ab3cdb453567491021af4e4054fb271f66d4f8"
+        },
+        "orbis-export/tests/test_orbis_prx_tls.py": {
+          "file": "common/orbis-export/tests/test_orbis_prx_tls.py",
+          "sha256": "141a988ed52d609232d1903c9a246cf0a99c4a314a5ba47642a3d7455da2554c"
+        },
+        "orbis-export/tests/test_orbis_release_compiler_guard.py": {
+          "file": "common/orbis-export/tests/test_orbis_release_compiler_guard.py",
+          "sha256": "67603f0383f5d5366163ff00c27b0817d48e409cd24e444102efd61a2b64d62d"
+        },
+        "orbis-export/tests/test_orbis_runtime_binary.py": {
+          "file": "common/orbis-export/tests/test_orbis_runtime_binary.py",
+          "sha256": "eac9860a34e512bb035bf965fd5cc82f041b126e5bcfd36f8b5a3dc83273569b"
+        },
+        "orbis-export/tests/test_orbis_runtime_source.py": {
+          "file": "versions/21/orbis-export/tests/test_orbis_runtime_source.py",
+          "sha256": "a2681c9863f3b40d667daa1c765fcba3f6b17558e058a5b857e45127d819de75"
+        },
+        "orbis-export/tests/test_orbis_signal_abi.py": {
+          "file": "common/orbis-export/tests/test_orbis_signal_abi.py",
+          "sha256": "ce1647cdaaddbd4c94669fe6046e8717537b5e350542588d602fafd19402cd1a"
+        },
+        "orbis-export/tests/test_orbis_signal_diagnostic.py": {
+          "file": "common/orbis-export/tests/test_orbis_signal_diagnostic.py",
+          "sha256": "4aa465b336f78b7f3f1372ac0a424f1e6624e321d7c32f2a8d428c0b3385fef2"
+        },
+        "orbis-export/tests/test_orbis_signal_diagnostic_binary.py": {
+          "file": "common/orbis-export/tests/test_orbis_signal_diagnostic_binary.py",
+          "sha256": "d8140ca651f9398f9f4468d96f3b175d364e0482e05b74917cb445003d7cf7b8"
+        },
+        "orbis-export/tests/test_orbis_socket_available.py": {
+          "file": "common/orbis-export/tests/test_orbis_socket_available.py",
+          "sha256": "a200ad9cec03318385295a933b1aad2f827ed64a928ab6eb8e268b35b0fd6d78"
+        },
+        "orbis-export/tests/test_orbis_stat_abi.py": {
+          "file": "versions/21/orbis-export/tests/test_orbis_stat_abi.py",
+          "sha256": "747427b11bb0c4257886728b825eae70f7e90ed283c370879b70becaa6f5fc47"
+        },
+        "orbis-export/tests/test_orbis_thread_dtors.py": {
+          "file": "versions/21/orbis-export/tests/test_orbis_thread_dtors.py",
+          "sha256": "07881b400fd864cc3d22bb03f21ea59651f5ccfdceb599c31489c6ce8f17c3be"
+        },
+        "orbis-export/tests/test_orbis_thread_stack_registry.py": {
+          "file": "common/orbis-export/tests/test_orbis_thread_stack_registry.py",
+          "sha256": "b650cf1101719676467453aa64aa8080dcf6db77eb825cece117491ee8dd8709"
+        },
+        "orbis-export/tests/test_orbis_timed_parking.py": {
+          "file": "versions/21/orbis-export/tests/test_orbis_timed_parking.py",
+          "sha256": "eda25efe73909a1b4f3e50d66fcbeddce441c3f9e833f1d3cd9f097d1299930b"
+        },
+        "orbis-export/tests/test_orbis_tls_per_thread.py": {
+          "file": "versions/21/orbis-export/tests/test_orbis_tls_per_thread.py",
+          "sha256": "8de24b646ab972025e4232b609c6170dfbf5ddc818815e81c4f68cdc499013b9"
+        },
+        "orbis-export/tests/test_orbis_vm_phase_diagnostics.py": {
+          "file": "versions/21/orbis-export/tests/test_orbis_vm_phase_diagnostics.py",
+          "sha256": "8a6afb69817b3acd04069dc5a048c6a49f057ce3cbd2cc38ae87cfc255d1f4ee"
+        },
+        "orbis-export/tests/test_prx_initializers.py": {
+          "file": "common/orbis-export/tests/test_prx_initializers.py",
+          "sha256": "96bc8ab8ce605d17da998fd744cf6270e80112eddfa8e2442a7aa07942150faa"
+        },
+        "orbis-export/tests/test_random_access_diagnostics.py": {
+          "file": "common/orbis-export/tests/test_random_access_diagnostics.py",
+          "sha256": "5bb3f2b89e3e58459c65f5f2ab2cac0f1ee54bc70d6ef1f5c1a686bc8d8bcb9e"
+        },
+        "orbis-export/tests/test_runtime_export.py": {
+          "file": "common/orbis-export/tests/test_runtime_export.py",
+          "sha256": "d38b614cfe6758637c2294aea1dedea7c70f974d8a78e99c2b371d76bd42f6c4"
+        },
+        "orbis-export/tests/test_runtime_image_modules.py": {
+          "file": "common/orbis-export/tests/test_runtime_image_modules.py",
+          "sha256": "a7dc6ca0971bc338dde985665d2153ff1aa08717f17872ba1de8d918a6d1f49d"
+        },
+        "orbis-export/tests/test_system_module_names.py": {
+          "file": "common/orbis-export/tests/test_system_module_names.py",
+          "sha256": "7df0390f8aaafff3d3bf932161cdfa78ac4da91b37ee297cad77b15634174e4e"
+        },
+        "orbis-export/tests/test_trace_redirect.py": {
+          "file": "common/orbis-export/tests/test_trace_redirect.py",
+          "sha256": "d5a995931fa27187fbee407591607ab58fff3dd3fc29e33629546fc4faa83344"
+        },
+        "orbis-export/tests/test_vmmap_trace.py": {
+          "file": "common/orbis-export/tests/test_vmmap_trace.py",
+          "sha256": "7e2f225729aed529ce4dedd2e4f1aacbbe412604d480e2517b19a356bd379387"
+        },
+        "orbis-export/tests/testdata/audit_binaries/manifest.json": {
+          "file": "common/orbis-export/tests/testdata/audit_binaries/manifest.json",
+          "sha256": "d7cf9e2cf6d6987dcf238238f735725d30226730da9314ca722958a281e05094"
+        },
+        "orbis-export/tests/testdata/audit_sources/direct.c": {
+          "file": "common/orbis-export/tests/testdata/audit_sources/direct.c",
+          "sha256": "d814aa2e817faf3c431e6870ae2556fdfc6eedcb103ba51a786ab8269ed9b828"
+        },
+        "orbis-export/tests/testdata/audit_sources/prohibited.c": {
+          "file": "common/orbis-export/tests/testdata/audit_sources/prohibited.c",
+          "sha256": "c92c39f4e710bc5dd6bf883744d1299e9fc4b1055106884329faf30e8b59a203"
+        },
+        "orbis-export/tests/testdata/orbis_missing_errno_test.c": {
+          "file": "common/orbis-export/tests/testdata/orbis_missing_errno_test.c",
+          "sha256": "04f6b4d15be222d900ea0037380b9a9a6d31bd2b6a36ffb6855aa47c50498541"
+        },
+        "orbis-export/tests/testdata/orbis_nonblocking_test.c": {
+          "file": "versions/21/orbis-export/tests/testdata/orbis_nonblocking_test.c",
+          "sha256": "2f2597617d6f5895ba3b40eeb16fe9678c003f998fa225661d3be6e2503b9972"
+        },
+        "orbis-export/tests/testdata/orbis_prx_tls_driver.c": {
+          "file": "common/orbis-export/tests/testdata/orbis_prx_tls_driver.c",
+          "sha256": "51e1486ec8bca274fd5d07c46990d017c8903622c8793e70aae9157280992b53"
+        },
+        "orbis-export/tests/testdata/orbis_prx_tls_module.c": {
+          "file": "common/orbis-export/tests/testdata/orbis_prx_tls_module.c",
+          "sha256": "0b2e17882f0bc6d6d6daaa134a0bd1b45c357df21fbd44056ea772ba713a7b93"
+        },
+        "orbis-export/tools/audit_native_providers.py": {
+          "file": "common/orbis-export/tools/audit_native_providers.py",
+          "sha256": "6a5a012746dff54c981709d448a6dcc4b6c21656af5d6249b70a002d2c85f652"
+        },
+        "orbis-export/tools/audit_orbis_binaries.py": {
+          "file": "common/orbis-export/tools/audit_orbis_binaries.py",
+          "sha256": "fa4f6770354157c28b4f6208c75b0e6bd6964d94a76744dfcb46a52d25962874"
+        },
+        "orbis-export/tools/audit_orbis_sources.py": {
+          "file": "common/orbis-export/tools/audit_orbis_sources.py",
+          "sha256": "6259336f9b56d15c44ad1d7a965dfb22e19a452ef7e8fdee15b63f002196b5c0"
+        },
+        "orbis-export/tools/build_native_modules.py": {
+          "file": "versions/21/orbis-export/tools/build_native_modules.py",
+          "sha256": "f73eb73365efb5335643e7ab8c1d29fde64fc79750f9c0e8831e69b68d714fc0"
+        },
+        "orbis-export/tools/check_native_package.py": {
+          "file": "common/orbis-export/tools/check_native_package.py",
+          "sha256": "a51aada24f5a7a41770b61d28bacd97795e57dad3e86eef78876ee2ddb6caf96"
+        },
+        "orbis-export/tools/export_jdk.py": {
+          "file": "common/orbis-export/tools/export_jdk.py",
+          "sha256": "308987c2c22b4de1b6fbfd0e00035c819162b46f7a2f87f0c73db45e5cca3129"
+        },
+        "orbis-export/tools/native_dlfcn.c": {
+          "file": "common/orbis-export/tools/native_dlfcn.c",
+          "sha256": "5b93390c765704ae24997a55a1c7d3df30b48ebb956323f272199bc49cdc1faa"
+        },
+        "orbis-export/tools/orbis_initializers.c": {
+          "file": "common/orbis-export/tools/orbis_initializers.c",
+          "sha256": "464bfe963a5d69d3e2a55fbe7bb197df5a06e1d64c345cace2baabdf30b2ea9b"
+        },
+        "orbis-export/tools/orbis_native_modules.py": {
+          "file": "common/orbis-export/tools/orbis_native_modules.py",
+          "sha256": "401d14a68757d6f3f896e457584d64d25fc207306f1adf8088642012feaae8bd"
+        },
+        "orbis-export/tools/orbis_native_policy.json": {
+          "file": "common/orbis-export/tools/orbis_native_policy.json",
+          "sha256": "5b320afed26e46d1924c385982ae1324d7612cb3a725ee00a7391f3fec9c5988"
+        },
+        "orbis-export/tools/orbis_prx_tls.c": {
+          "file": "common/orbis-export/tools/orbis_prx_tls.c",
+          "sha256": "c23cdd69b4026ab9ab42f68855ab8f8d24dc2ec6e4bee614e73892a1c80877f1"
+        },
+        "orbis-export/tools/orbis_runtime.c": {
+          "file": "versions/21/orbis-export/tools/orbis_runtime.c",
+          "sha256": "f01289484546587ea8a9c851c5e7444b3ac441ea4da6c585e74197d9631340be"
+        },
+        "orbis-export/tools/orbis_runtime.h": {
+          "file": "common/orbis-export/tools/orbis_runtime.h",
+          "sha256": "21473a9a64ed46997733a85107b6231ce75b8013ad65bab8b538ddea240cfa71"
+        },
+        "orbis-export/tools/orbis_tls.c": {
+          "file": "common/orbis-export/tools/orbis_tls.c",
+          "sha256": "9b181b41ac2a689302140aa5267446c3bbc7a72dcc1bea1ade8a298943d6d503"
+        },
+        "orbis-export/tools/prepare_jvm_link.py": {
+          "file": "common/orbis-export/tools/prepare_jvm_link.py",
+          "sha256": "5f01541cf3e942ee68ad2664a4c4213a3b9b6447144c75e0267e8af50dc41ecc"
+        }
+      },
+      "expected_source_tree": {
+        "src": "d5d6a86966bf06ae87d42850f4845f8063907b41",
+        "make": "f067ecb531327626f8891d961ec66236e3c5ead2",
+        "test": "601868a4a2bf008c977abd71ca8031ee316f187f"
+      }
+    },
+    "25": {
+      "url": "https://github.com/battleblow/jdk25u.git",
+      "base": "b33cb4d762011f1671fe2f07ec76515aa596fe65",
+      "port_revision": "ee087fb75371851ea84902086a4e6a72ca2dd044",
+      "patches": [
+        {
+          "file": "patches/25/0001-orbis-port.patch",
+          "sha256": "2e2785e0417df4f91013a064e7d38fc703a7c2d0b58742898cc7e93a3e9bebfc"
+        }
+      ],
+      "export_files": {
+        "orbis-export/.gitignore": {
+          "file": "common/orbis-export/.gitignore",
+          "sha256": "eef7f7f1e361660fb53ab709f82527cffb6048a0fe970cfff8d532ae916bb7da"
+        },
+        "orbis-export/Makefile": {
+          "file": "versions/25/orbis-export/Makefile",
+          "sha256": "fa8310fa3ea3ccf2dc51b85921843a19f407836f478c1fb52e1271fc4472c761"
+        },
+        "orbis-export/README.md": {
+          "file": "versions/25/orbis-export/README.md",
+          "sha256": "b79154ad3e23f1c575adb261436dec07217d86da61736a0037274e82670c20a7"
+        },
+        "orbis-export/configure-orbis.sh": {
+          "file": "versions/25/orbis-export/configure-orbis.sh",
+          "sha256": "e9e19de23e914491f0770f582941c140ed313758489bd07a1edd5821066a18ea"
+        },
+        "orbis-export/runtime-data/desktop/fonts/DejaVuSans.ttf": {
+          "file": "common/orbis-export/runtime-data/desktop/fonts/DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954"
+        },
+        "orbis-export/runtime-data/desktop/fonts/LICENSE": {
+          "file": "common/orbis-export/runtime-data/desktop/fonts/LICENSE",
+          "sha256": "7a083b136e64d064794c3419751e5c7dd10d2f64c108fe5ba161eae5e5958a93"
+        },
+        "orbis-export/runtime-data/desktop/fonts/README.md": {
+          "file": "common/orbis-export/runtime-data/desktop/fonts/README.md",
+          "sha256": "64f175adbba3af5fb8fc453b70bf0b533b7a5d3882c29dc88773b70d6ed06313"
+        },
+        "orbis-export/tests/orbis_direct_memory_arena_test.cpp": {
+          "file": "common/orbis-export/tests/orbis_direct_memory_arena_test.cpp",
+          "sha256": "2801ee576fd6fa8d6861328a1fb9f96a5eba54a0673da6ef4d158465574449df"
+        },
+        "orbis-export/tests/orbis_thread_stack_registry_test.cpp": {
+          "file": "common/orbis-export/tests/orbis_thread_stack_registry_test.cpp",
+          "sha256": "27d5d5ae84f84782c7fd8b1d1c8e3d5bab9a657b0295c4ea2a4f5b576cbdb046"
+        },
+        "orbis-export/tests/run_checks.py": {
+          "file": "versions/25/orbis-export/tests/run_checks.py",
+          "sha256": "e7cc4f7a7cfccd1096db3217759efc88f34b7d599518dc97763d497912ee2d53"
+        },
+        "orbis-export/tests/test_audit_orbis_binaries.py": {
+          "file": "common/orbis-export/tests/test_audit_orbis_binaries.py",
+          "sha256": "67cb82ea1eaddc2c80c5b21d96bc11c137f0b2b4e0f5a5501b313cde24147ba4"
+        },
+        "orbis-export/tests/test_audit_orbis_sources.py": {
+          "file": "common/orbis-export/tests/test_audit_orbis_sources.py",
+          "sha256": "492abd0fadfa64570a6a6bad331335847d03e168338aa474068dbcd51e122294"
+        },
+        "orbis-export/tests/test_build_graph.py": {
+          "file": "common/orbis-export/tests/test_build_graph.py",
+          "sha256": "66828844511e122145dd707c49a1bb64374837998a4bb63dd41b90fba26a739f"
+        },
+        "orbis-export/tests/test_export_build_inputs.py": {
+          "file": "common/orbis-export/tests/test_export_build_inputs.py",
+          "sha256": "f810e77f60a067010674083c899e3c9adbc0fb0ad0bf6b0cec10980cb8133214"
+        },
+        "orbis-export/tests/test_export_safety.py": {
+          "file": "common/orbis-export/tests/test_export_safety.py",
+          "sha256": "05e71deafad4dd6ca0a23ce84c61e3336f6b34b54d04eee06109371c02703721"
+        },
+        "orbis-export/tests/test_jaas_native_module.py": {
+          "file": "common/orbis-export/tests/test_jaas_native_module.py",
+          "sha256": "2530635cea7570d9fdc83fd18bce359716762b947974053426196b94ca1514cb"
+        },
+        "orbis-export/tests/test_native_dependency_order.py": {
+          "file": "common/orbis-export/tests/test_native_dependency_order.py",
+          "sha256": "5e1d36febcdd658d19b3593ccbbc14085ee290b51e736232e523ccd096430508"
+        },
+        "orbis-export/tests/test_native_loader.py": {
+          "file": "common/orbis-export/tests/test_native_loader.py",
+          "sha256": "29022c301ad1e7f4ae5086aa16e49d351e27eb701cfff5e216d326f7862e405d"
+        },
+        "orbis-export/tests/test_native_runtime_environment.py": {
+          "file": "common/orbis-export/tests/test_native_runtime_environment.py",
+          "sha256": "97db04d8f39878e5a07526bd10adb8f34abd7b0932ec862a9c5ec9c531247668"
+        },
+        "orbis-export/tests/test_native_runtime_location.py": {
+          "file": "common/orbis-export/tests/test_native_runtime_location.py",
+          "sha256": "e60d7a35d235ef556c57261a720dc00df88fa5275246d62b11365aeeb62ea77d"
+        },
+        "orbis-export/tests/test_nio_filesystem_diagnostics.py": {
+          "file": "common/orbis-export/tests/test_nio_filesystem_diagnostics.py",
+          "sha256": "d601a94484bb1277bdcec311382304903c8f9ba63fba1d286f4f08c11b4c06c5"
+        },
+        "orbis-export/tests/test_orbis_clock_abi.py": {
+          "file": "common/orbis-export/tests/test_orbis_clock_abi.py",
+          "sha256": "49bcec2231890f0cf392f24867ba4039ac76406578e717b8a5a5391637b48b87"
+        },
+        "orbis-export/tests/test_orbis_condvar_clock.py": {
+          "file": "common/orbis-export/tests/test_orbis_condvar_clock.py",
+          "sha256": "1c8821154bf64ada4f1069e904f0650e1cbacc845071146e197459b36ec70b6d"
+        },
+        "orbis-export/tests/test_orbis_delete_errno_source.py": {
+          "file": "common/orbis-export/tests/test_orbis_delete_errno_source.py",
+          "sha256": "3b2f01ab62dffdb486e37a40de7b3fc79f1b579e1e1509d8bd3b6e8efb0f10ef"
+        },
+        "orbis-export/tests/test_orbis_direct_memory_arena.py": {
+          "file": "common/orbis-export/tests/test_orbis_direct_memory_arena.py",
+          "sha256": "18a4dc9066e83807fc34ebb8044ea31e92c4c2f30b3dc26138bb6f4fa46f6ee8"
+        },
+        "orbis-export/tests/test_orbis_dll_load_diagnostics.py": {
+          "file": "common/orbis-export/tests/test_orbis_dll_load_diagnostics.py",
+          "sha256": "ed378f8f916e43a448ceddb41d5d5783778f3d9b1688094f3af6511c24c47bd6"
+        },
+        "orbis-export/tests/test_orbis_dns_resolver.py": {
+          "file": "common/orbis-export/tests/test_orbis_dns_resolver.py",
+          "sha256": "66f0d931f098a54a34e8dd4dca98d4777298070688583000ae8acd3d3bcf4d81"
+        },
+        "orbis-export/tests/test_orbis_file_channel_size.py": {
+          "file": "versions/25/orbis-export/tests/test_orbis_file_channel_size.py",
+          "sha256": "02b538a8c7a9dfffd59190129b139e8041df504ce3b64728902908db5cc18450"
+        },
+        "orbis-export/tests/test_orbis_file_length.py": {
+          "file": "common/orbis-export/tests/test_orbis_file_length.py",
+          "sha256": "6ea2fd5b38dd2b977e3ed09ef3b4490c730e0cfcd7f8fe0670bef7472e4331ea"
+        },
+        "orbis-export/tests/test_orbis_file_relative_paths.py": {
+          "file": "common/orbis-export/tests/test_orbis_file_relative_paths.py",
+          "sha256": "5fddb588b7bea477447cfedabf07977cd0f0ca4749d01ce515f002e9b3e16567"
+        },
+        "orbis-export/tests/test_orbis_jimage_diagnostics.py": {
+          "file": "common/orbis-export/tests/test_orbis_jimage_diagnostics.py",
+          "sha256": "56d41dfc07edd5f9f726506aebd0324fcfba22cb472f549bd46f05384fe3c2d8"
+        },
+        "orbis-export/tests/test_orbis_lstat_source.py": {
+          "file": "common/orbis-export/tests/test_orbis_lstat_source.py",
+          "sha256": "1d822a21fbae511bf83298b63d46fe077aab085379af6bd97c485a92a3737d6d"
+        },
+        "orbis-export/tests/test_orbis_management_metrics.py": {
+          "file": "common/orbis-export/tests/test_orbis_management_metrics.py",
+          "sha256": "a40579ec45a63f54383a45d5a5362edd25fc50288148a85cfc69431d06636c0f"
+        },
+        "orbis-export/tests/test_orbis_metaspace_reservation_fallback.py": {
+          "file": "versions/25/orbis-export/tests/test_orbis_metaspace_reservation_fallback.py",
+          "sha256": "9acdb9838de07c0f0a3bbf8f7ab553851a7665886486594a7dd6d1f881a4083c"
+        },
+        "orbis-export/tests/test_orbis_missing_errno.py": {
+          "file": "common/orbis-export/tests/test_orbis_missing_errno.py",
+          "sha256": "d21fef0fe4e090662f83a87828e5c64b9891201fe9306b6eaf8fdf147b8cbd1e"
+        },
+        "orbis-export/tests/test_orbis_nio_access.py": {
+          "file": "versions/25/orbis-export/tests/test_orbis_nio_access.py",
+          "sha256": "e73212ba34bdfdbe8b1e7fa217d2d0b8f430cd65f3839c5f5bcd6809e111646b"
+        },
+        "orbis-export/tests/test_orbis_nio_file_lock.py": {
+          "file": "versions/25/orbis-export/tests/test_orbis_nio_file_lock.py",
+          "sha256": "45b1bb640dd2a2ded93bdb31e1e011299eebd5906ad292cfa2a29f70ee383137"
+        },
+        "orbis-export/tests/test_orbis_nio_nonblocking.py": {
+          "file": "common/orbis-export/tests/test_orbis_nio_nonblocking.py",
+          "sha256": "44a37cf61ec7ac569d4eaf303b3d5ae48edd97b05085964390e1212963e2aab2"
+        },
+        "orbis-export/tests/test_orbis_nio_relative_paths.py": {
+          "file": "common/orbis-export/tests/test_orbis_nio_relative_paths.py",
+          "sha256": "720fb2522fe8982cc9fdd9f2a725c0344b4dc64fb6160d5fac599f91a365544b"
+        },
+        "orbis-export/tests/test_orbis_nio_tcp_nodelay.py": {
+          "file": "common/orbis-export/tests/test_orbis_nio_tcp_nodelay.py",
+          "sha256": "9a9ba269353cbc398e6618b7af0692fdb06ca0d175b19b12fac7353b7d6a3a21"
+        },
+        "orbis-export/tests/test_orbis_no_app0_writes.py": {
+          "file": "versions/25/orbis-export/tests/test_orbis_no_app0_writes.py",
+          "sha256": "772ee3b63f788cb38375c5a1dec332c721872711cd59fe897c0fd1b061bc2812"
+        },
+        "orbis-export/tests/test_orbis_pipe_fallback.py": {
+          "file": "common/orbis-export/tests/test_orbis_pipe_fallback.py",
+          "sha256": "b051cbaed3c3ba64be5ed92ddc5512babf7b4b48a8080f5df6dc3219d0c6b72a"
+        },
+        "orbis-export/tests/test_orbis_process_builder_contract.py": {
+          "file": "versions/25/orbis-export/tests/test_orbis_process_builder_contract.py",
+          "sha256": "f05c2c55850efa94d06527b7b1ab3cdb453567491021af4e4054fb271f66d4f8"
+        },
+        "orbis-export/tests/test_orbis_prx_tls.py": {
+          "file": "common/orbis-export/tests/test_orbis_prx_tls.py",
+          "sha256": "141a988ed52d609232d1903c9a246cf0a99c4a314a5ba47642a3d7455da2554c"
+        },
+        "orbis-export/tests/test_orbis_release_compiler_guard.py": {
+          "file": "common/orbis-export/tests/test_orbis_release_compiler_guard.py",
+          "sha256": "67603f0383f5d5366163ff00c27b0817d48e409cd24e444102efd61a2b64d62d"
+        },
+        "orbis-export/tests/test_orbis_runtime_binary.py": {
+          "file": "common/orbis-export/tests/test_orbis_runtime_binary.py",
+          "sha256": "eac9860a34e512bb035bf965fd5cc82f041b126e5bcfd36f8b5a3dc83273569b"
+        },
+        "orbis-export/tests/test_orbis_runtime_source.py": {
+          "file": "versions/25/orbis-export/tests/test_orbis_runtime_source.py",
+          "sha256": "00665952366184354eb8047f9bdba100f3036f5a577451665b6560dbdecb2d8e"
+        },
+        "orbis-export/tests/test_orbis_signal_abi.py": {
+          "file": "common/orbis-export/tests/test_orbis_signal_abi.py",
+          "sha256": "ce1647cdaaddbd4c94669fe6046e8717537b5e350542588d602fafd19402cd1a"
+        },
+        "orbis-export/tests/test_orbis_signal_diagnostic.py": {
+          "file": "common/orbis-export/tests/test_orbis_signal_diagnostic.py",
+          "sha256": "4aa465b336f78b7f3f1372ac0a424f1e6624e321d7c32f2a8d428c0b3385fef2"
+        },
+        "orbis-export/tests/test_orbis_signal_diagnostic_binary.py": {
+          "file": "common/orbis-export/tests/test_orbis_signal_diagnostic_binary.py",
+          "sha256": "d8140ca651f9398f9f4468d96f3b175d364e0482e05b74917cb445003d7cf7b8"
+        },
+        "orbis-export/tests/test_orbis_socket_available.py": {
+          "file": "common/orbis-export/tests/test_orbis_socket_available.py",
+          "sha256": "a200ad9cec03318385295a933b1aad2f827ed64a928ab6eb8e268b35b0fd6d78"
+        },
+        "orbis-export/tests/test_orbis_stat_abi.py": {
+          "file": "versions/25/orbis-export/tests/test_orbis_stat_abi.py",
+          "sha256": "747427b11bb0c4257886728b825eae70f7e90ed283c370879b70becaa6f5fc47"
+        },
+        "orbis-export/tests/test_orbis_thread_dtors.py": {
+          "file": "versions/25/orbis-export/tests/test_orbis_thread_dtors.py",
+          "sha256": "07881b400fd864cc3d22bb03f21ea59651f5ccfdceb599c31489c6ce8f17c3be"
+        },
+        "orbis-export/tests/test_orbis_thread_stack_registry.py": {
+          "file": "common/orbis-export/tests/test_orbis_thread_stack_registry.py",
+          "sha256": "b650cf1101719676467453aa64aa8080dcf6db77eb825cece117491ee8dd8709"
+        },
+        "orbis-export/tests/test_orbis_timed_parking.py": {
+          "file": "versions/25/orbis-export/tests/test_orbis_timed_parking.py",
+          "sha256": "3b309d72634c287c765f375bde8fda1080f3927811fa99b80aa0110c746dc372"
+        },
+        "orbis-export/tests/test_orbis_tls_per_thread.py": {
+          "file": "versions/25/orbis-export/tests/test_orbis_tls_per_thread.py",
+          "sha256": "8de24b646ab972025e4232b609c6170dfbf5ddc818815e81c4f68cdc499013b9"
+        },
+        "orbis-export/tests/test_orbis_vm_phase_diagnostics.py": {
+          "file": "versions/25/orbis-export/tests/test_orbis_vm_phase_diagnostics.py",
+          "sha256": "363e8776ac89041b0da8c0d151b109ca67093597c73aaa773ee5e070099fe433"
+        },
+        "orbis-export/tests/test_prx_initializers.py": {
+          "file": "common/orbis-export/tests/test_prx_initializers.py",
+          "sha256": "96bc8ab8ce605d17da998fd744cf6270e80112eddfa8e2442a7aa07942150faa"
+        },
+        "orbis-export/tests/test_random_access_diagnostics.py": {
+          "file": "common/orbis-export/tests/test_random_access_diagnostics.py",
+          "sha256": "5bb3f2b89e3e58459c65f5f2ab2cac0f1ee54bc70d6ef1f5c1a686bc8d8bcb9e"
+        },
+        "orbis-export/tests/test_runtime_export.py": {
+          "file": "common/orbis-export/tests/test_runtime_export.py",
+          "sha256": "d38b614cfe6758637c2294aea1dedea7c70f974d8a78e99c2b371d76bd42f6c4"
+        },
+        "orbis-export/tests/test_runtime_image_modules.py": {
+          "file": "common/orbis-export/tests/test_runtime_image_modules.py",
+          "sha256": "a7dc6ca0971bc338dde985665d2153ff1aa08717f17872ba1de8d918a6d1f49d"
+        },
+        "orbis-export/tests/test_system_module_names.py": {
+          "file": "common/orbis-export/tests/test_system_module_names.py",
+          "sha256": "7df0390f8aaafff3d3bf932161cdfa78ac4da91b37ee297cad77b15634174e4e"
+        },
+        "orbis-export/tests/test_trace_redirect.py": {
+          "file": "common/orbis-export/tests/test_trace_redirect.py",
+          "sha256": "d5a995931fa27187fbee407591607ab58fff3dd3fc29e33629546fc4faa83344"
+        },
+        "orbis-export/tests/test_vmmap_trace.py": {
+          "file": "common/orbis-export/tests/test_vmmap_trace.py",
+          "sha256": "7e2f225729aed529ce4dedd2e4f1aacbbe412604d480e2517b19a356bd379387"
+        },
+        "orbis-export/tests/testdata/audit_binaries/manifest.json": {
+          "file": "common/orbis-export/tests/testdata/audit_binaries/manifest.json",
+          "sha256": "d7cf9e2cf6d6987dcf238238f735725d30226730da9314ca722958a281e05094"
+        },
+        "orbis-export/tests/testdata/audit_sources/direct.c": {
+          "file": "common/orbis-export/tests/testdata/audit_sources/direct.c",
+          "sha256": "d814aa2e817faf3c431e6870ae2556fdfc6eedcb103ba51a786ab8269ed9b828"
+        },
+        "orbis-export/tests/testdata/audit_sources/prohibited.c": {
+          "file": "common/orbis-export/tests/testdata/audit_sources/prohibited.c",
+          "sha256": "c92c39f4e710bc5dd6bf883744d1299e9fc4b1055106884329faf30e8b59a203"
+        },
+        "orbis-export/tests/testdata/orbis_missing_errno_test.c": {
+          "file": "common/orbis-export/tests/testdata/orbis_missing_errno_test.c",
+          "sha256": "04f6b4d15be222d900ea0037380b9a9a6d31bd2b6a36ffb6855aa47c50498541"
+        },
+        "orbis-export/tests/testdata/orbis_nonblocking_test.c": {
+          "file": "versions/25/orbis-export/tests/testdata/orbis_nonblocking_test.c",
+          "sha256": "2f2597617d6f5895ba3b40eeb16fe9678c003f998fa225661d3be6e2503b9972"
+        },
+        "orbis-export/tests/testdata/orbis_prx_tls_driver.c": {
+          "file": "common/orbis-export/tests/testdata/orbis_prx_tls_driver.c",
+          "sha256": "51e1486ec8bca274fd5d07c46990d017c8903622c8793e70aae9157280992b53"
+        },
+        "orbis-export/tests/testdata/orbis_prx_tls_module.c": {
+          "file": "common/orbis-export/tests/testdata/orbis_prx_tls_module.c",
+          "sha256": "0b2e17882f0bc6d6d6daaa134a0bd1b45c357df21fbd44056ea772ba713a7b93"
+        },
+        "orbis-export/tools/audit_native_providers.py": {
+          "file": "common/orbis-export/tools/audit_native_providers.py",
+          "sha256": "6a5a012746dff54c981709d448a6dcc4b6c21656af5d6249b70a002d2c85f652"
+        },
+        "orbis-export/tools/audit_orbis_binaries.py": {
+          "file": "common/orbis-export/tools/audit_orbis_binaries.py",
+          "sha256": "fa4f6770354157c28b4f6208c75b0e6bd6964d94a76744dfcb46a52d25962874"
+        },
+        "orbis-export/tools/audit_orbis_sources.py": {
+          "file": "common/orbis-export/tools/audit_orbis_sources.py",
+          "sha256": "6259336f9b56d15c44ad1d7a965dfb22e19a452ef7e8fdee15b63f002196b5c0"
+        },
+        "orbis-export/tools/build_native_modules.py": {
+          "file": "versions/25/orbis-export/tools/build_native_modules.py",
+          "sha256": "ff13a118fdc2f366ed20013e296e25bc21aa099648122d48342b279b41f8e3e2"
+        },
+        "orbis-export/tools/check_native_package.py": {
+          "file": "common/orbis-export/tools/check_native_package.py",
+          "sha256": "a51aada24f5a7a41770b61d28bacd97795e57dad3e86eef78876ee2ddb6caf96"
+        },
+        "orbis-export/tools/export_jdk.py": {
+          "file": "common/orbis-export/tools/export_jdk.py",
+          "sha256": "308987c2c22b4de1b6fbfd0e00035c819162b46f7a2f87f0c73db45e5cca3129"
+        },
+        "orbis-export/tools/native_dlfcn.c": {
+          "file": "common/orbis-export/tools/native_dlfcn.c",
+          "sha256": "5b93390c765704ae24997a55a1c7d3df30b48ebb956323f272199bc49cdc1faa"
+        },
+        "orbis-export/tools/orbis_initializers.c": {
+          "file": "common/orbis-export/tools/orbis_initializers.c",
+          "sha256": "464bfe963a5d69d3e2a55fbe7bb197df5a06e1d64c345cace2baabdf30b2ea9b"
+        },
+        "orbis-export/tools/orbis_native_modules.py": {
+          "file": "common/orbis-export/tools/orbis_native_modules.py",
+          "sha256": "401d14a68757d6f3f896e457584d64d25fc207306f1adf8088642012feaae8bd"
+        },
+        "orbis-export/tools/orbis_native_policy.json": {
+          "file": "common/orbis-export/tools/orbis_native_policy.json",
+          "sha256": "5b320afed26e46d1924c385982ae1324d7612cb3a725ee00a7391f3fec9c5988"
+        },
+        "orbis-export/tools/orbis_prx_tls.c": {
+          "file": "common/orbis-export/tools/orbis_prx_tls.c",
+          "sha256": "c23cdd69b4026ab9ab42f68855ab8f8d24dc2ec6e4bee614e73892a1c80877f1"
+        },
+        "orbis-export/tools/orbis_runtime.c": {
+          "file": "versions/25/orbis-export/tools/orbis_runtime.c",
+          "sha256": "f01289484546587ea8a9c851c5e7444b3ac441ea4da6c585e74197d9631340be"
+        },
+        "orbis-export/tools/orbis_runtime.h": {
+          "file": "common/orbis-export/tools/orbis_runtime.h",
+          "sha256": "21473a9a64ed46997733a85107b6231ce75b8013ad65bab8b538ddea240cfa71"
+        },
+        "orbis-export/tools/orbis_tls.c": {
+          "file": "common/orbis-export/tools/orbis_tls.c",
+          "sha256": "9b181b41ac2a689302140aa5267446c3bbc7a72dcc1bea1ade8a298943d6d503"
+        },
+        "orbis-export/tools/prepare_jvm_link.py": {
+          "file": "common/orbis-export/tools/prepare_jvm_link.py",
+          "sha256": "5f01541cf3e942ee68ad2664a4c4213a3b9b6447144c75e0267e8af50dc41ecc"
+        }
+      },
+      "expected_source_tree": {
+        "src": "f60852a26acb2af27730ea74d20d152ff6565c20",
+        "make": "568c05fafa7654dcdc8dc2f17d4bd0fc00a59038",
+        "test": "5e0081dc8372d5c1dcf9c44ff65cf6e43268a81d"
+      }
+    }
+  }
+}

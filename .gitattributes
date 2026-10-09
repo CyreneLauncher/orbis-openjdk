@@ -1,0 +1,6 @@
+# Unified diffs contain intentional whitespace-only context lines; preserve them verbatim.
+*.patch -whitespace
+# These imported files retain the exact bytes from the accepted ports.
+common/orbis-export/.gitignore whitespace=-blank-at-eof
+common/orbis-export/runtime-data/desktop/fonts/LICENSE -whitespace
+versions/*/orbis-export/Makefile whitespace=-blank-at-eof
