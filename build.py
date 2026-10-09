@@ -148,6 +148,7 @@ def main():
                   'boot_java': run([boot / 'bin/java', '-version'], capture=True),
                   'libc_sha256': sha(toolchain / 'lib/libc.a'),
                   'source_diff_sha256': hashlib.sha256(run(['git', 'diff', '--binary', inputs(version)['base'], '--', 'src', 'make', 'test'], source, True).encode()).hexdigest()}
+        report['output_files'] = {p.relative_to(destination).as_posix(): sha(p) for p in sorted(destination.rglob('*')) if p.is_file()}
         (destination / 'build-provenance.json').write_text(json.dumps(report, indent=2) + '\n')
         print('Built and audited runtime: ' + str(destination), flush=True)
 
