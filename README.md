@@ -70,6 +70,23 @@ python3 build.py export 25 --boot-jdk /path/to/host-jdk25
 
 `check` runs host/source checks. Export/artifact checks require compiled modules. Host checks and package checks do not prove the runtime works on a PS4; launch testing is still required. Existing output directories are preserved rather than silently overwritten.
 
+## Published runtimes
+
+`.github/workflows/release.yml` builds JDK 17, 21 and 25 on GitHub-hosted Ubuntu 24.04. It installs the SDK archives pinned in `toolchain.lock.json` (`tools/provision_sdk.py` checks every archive and the toolchain's `libc.a`) and the host JDKs recorded there. Run it from **Actions → Build Orbis runtimes → Run workflow**; with `publish` checked it creates the release `jdk-<first 12 characters of the commit>` containing:
+
+- `orbis-jdk17-x86_64.tar.xz`, `orbis-jdk21-x86_64.tar.xz`, `orbis-jdk25-x86_64.tar.xz`: each holds one audited `output/jdkNN` export, including its `build-provenance.json`, with file modes kept.
+- `SHA256SUMS`.
+
+Cyrene Launcher downloads these instead of compiling the JDKs. It derives the tag from its pinned `orbis-openjdk` revision and checks each asset against the SHA-256 recorded in its `tools/runtimes.lock.json`. After publishing a release for a new revision, pin both in the launcher:
+
+```sh
+./orbis pin-jdks    # in the launcher, after updating the orbis-openjdk revision
+```
+
+Keep `toolchain.lock.json` identical to the launcher's SDK pins. The launcher rejects a runtime whose recorded `libc.a` hash differs from its own toolchain.
+
+To pack a local build the same way, run `python3 tools/release.py pack 17 21 25` and `python3 tools/release.py checksums`; assets are written to the ignored `dist/` directory.
+
 ## Development
 
 Edit the prepared source normally, build it and test it on the console. The builder allows local source edits and records their diff hash. Save those edits back into the small build repository:
