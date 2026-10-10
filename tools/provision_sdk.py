@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import shutil
 import stat
 import tarfile
 import urllib.request
@@ -76,6 +77,10 @@ def provision(destination, lock_path):
         verify(toolchain / relative(name), expected)
     # create-fself, used to sign every native module, reads OO_PS4_TOOLCHAIN.
     env = {'ORBIS_SDK': str(sdk), 'PS4_TOOLCHAIN': str(toolchain), 'OO_PS4_TOOLCHAIN': str(toolchain)}
+    llvm_config = shutil.which('llvm-config-' + str(lock['llvm_major']))
+    if llvm_config:
+        # The SDK resolves this value as a file name, not as a PATH command name.
+        env['LLVM_CONFIG'] = str(Path(llvm_config).resolve())
     env_path = os.environ.get('GITHUB_ENV')
     if env_path:
         with Path(env_path).open('a') as output:
