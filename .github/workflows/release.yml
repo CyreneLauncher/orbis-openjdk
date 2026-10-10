@@ -1,0 +1,112 @@
+name: Build Orbis runtimes
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Replace the rolling download release with these runtimes
+        default: false
+        type: boolean
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: orbis-runtimes-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Check recorded link inputs
+        run: python3 -m unittest discover -s tests -v
+  runtimes:
+    needs: checks
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix:
+        jdk: ['17', '21', '25']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Make room on the disposable runner
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/swift /opt/ghc
+          df -h "$GITHUB_WORKSPACE"
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential clang-18 lld-18 llvm-18 autoconf zip unzip \
+            python3-pyelftools libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev \
+            libasound2-dev libcups2-dev libfontconfig1-dev
+          echo /usr/lib/llvm-18/bin >> "$GITHUB_PATH"
+      - name: Read pinned host JDK
+        id: host
+        env:
+          JDK_VERSION: ${{ matrix.jdk }}
+        run: python3 -c "import json,os;print('release='+json.load(open('toolchain.lock.json'))['host_jdks'][os.environ['JDK_VERSION']])" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4
+        with:
+          distribution: temurin
+          java-version: ${{ steps.host.outputs.release }}
+      - name: Provision exact SDKs
+        run: python3 tools/provision_sdk.py --destination "$RUNNER_TEMP/orbis-sdk"
+      - name: Build and audit runtime
+        env:
+          JDK_VERSION: ${{ matrix.jdk }}
+        run: |
+          python3 build.py build "$JDK_VERSION" --boot-jdk "$JAVA_HOME" \
+            --sdk "$ORBIS_SDK" --toolchain "$PS4_TOOLCHAIN" --jobs 4
+      - name: Pack release asset
+        env:
+          JDK_VERSION: ${{ matrix.jdk }}
+        run: python3 tools/release.py pack "$JDK_VERSION"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: jre${{ matrix.jdk }}-orbis
+          path: dist/jre*-orbis-x86_64.tar.xz
+          if-no-files-found: error
+          retention-days: 14
+      - name: Save logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: logs-jdk${{ matrix.jdk }}
+          path: |
+            work/jdk${{ matrix.jdk }}u/config.log
+            work/jdk${{ matrix.jdk }}u/build/**/configure.log
+            work/jdk${{ matrix.jdk }}u/build/**/failure-summary*
+          retention-days: 14
+  publish:
+    needs: runtimes
+    # Cyrene Launcher packages the latest release, so only the default branch publishes.
+    if: inputs.publish && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          pattern: jre*-orbis
+          path: dist
+          merge-multiple: true
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          (cd dist && sha256sum ./*.tar.xz | sed 's# \./# #' > SHA256SUMS)
+          cat dist/SHA256SUMS
+          # One rolling release, as AngelAuraMC's angelauramc-openjdk-build does: the download
+          # tag always points at the commit its current runtimes were built from.
+          if gh release view download --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+            gh release delete download --repo "$GITHUB_REPOSITORY" --cleanup-tag --yes
+          fi
+          gh release create download dist/* --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --latest \
+            --title "Orbis JREs" \
+            --notes "Download centre for the Cyrene Launcher Java runtimes: OpenJDK 17, 21 and 25 for PS4/Orbis, built on GitHub-hosted Ubuntu from commit ${GITHUB_SHA} with the SDKs in toolchain.lock.json. Each archive holds one audited runtime with its build-provenance.json. Each publish replaces these files."
