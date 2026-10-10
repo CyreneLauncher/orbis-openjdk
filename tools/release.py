@@ -17,6 +17,10 @@ def asset_name(version):
     return 'jre' + version + '-orbis-x86_64.tar.xz'
 
 
+def debug_asset_name(version):
+    return 'jre' + version + '-orbis-x86_64-debug.tar.xz'
+
+
 def normalized(info):
     info.uid = info.gid = 0
     info.uname = info.gname = ''
@@ -25,12 +29,20 @@ def normalized(info):
 
 
 def pack(version, output, dist):
+    """The runtime, and apart from it, as AngelAuraMC does, the unstripped native modules."""
     runtime = output / ('jdk' + version)
     for name in ('release', 'build-provenance.json', 'lib/server/libjvm.prx'):
         if not (runtime / name).is_file():
             raise ValueError('Incomplete runtime export: ' + str(runtime / name))
+    debug = output / ('jdk' + version + '-debug')
+    if not (debug / 'libjvm.so').is_file():
+        raise ValueError('Missing unstripped modules: ' + str(debug))
     dist.mkdir(parents=True, exist_ok=True)
-    archive = dist / asset_name(version)
+    return [archive_tree(runtime, output, dist / asset_name(version)),
+            archive_tree(debug, output, dist / debug_asset_name(version))]
+
+
+def archive_tree(runtime, output, archive):
     if archive.exists():
         raise ValueError('Release asset already exists: ' + str(archive))
     with tarfile.open(archive, 'w:xz', preset=9) as target:

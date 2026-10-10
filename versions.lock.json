@@ -298,7 +298,7 @@
         },
         "orbis-export/tools/build_native_modules.py": {
           "file": "versions/17/orbis-export/tools/build_native_modules.py",
-          "sha256": "9dd29bc783771262ca0f45a5f20de8a822e189e263223e3896665a2917d5ed28"
+          "sha256": "22f9e8fa85e392ac1518fea4099dcb1aa1a9892a0f4eb40c9c8c39575a8b103d"
         },
         "orbis-export/tools/check_native_package.py": {
           "file": "common/orbis-export/tools/check_native_package.py",
@@ -306,7 +306,7 @@
         },
         "orbis-export/tools/export_jdk.py": {
           "file": "common/orbis-export/tools/export_jdk.py",
-          "sha256": "308987c2c22b4de1b6fbfd0e00035c819162b46f7a2f87f0c73db45e5cca3129"
+          "sha256": "579c300d5148dc50ea0576f80a541f92753d66e3ed6943fd7ea0be08ec458a16"
         },
         "orbis-export/tools/native_dlfcn.c": {
           "file": "common/orbis-export/tools/native_dlfcn.c",
@@ -660,7 +660,7 @@
         },
         "orbis-export/tools/build_native_modules.py": {
           "file": "versions/21/orbis-export/tools/build_native_modules.py",
-          "sha256": "b534ffd8b41a9b298b2912876add48c7b579618d6274181e0389abdd3b7e1747"
+          "sha256": "1a7dd5e516c82e6710e60bd4ba411dd9ae5d0dacd8e6023ca5939d288af34ff4"
         },
         "orbis-export/tools/check_native_package.py": {
           "file": "common/orbis-export/tools/check_native_package.py",
@@ -668,7 +668,7 @@
         },
         "orbis-export/tools/export_jdk.py": {
           "file": "common/orbis-export/tools/export_jdk.py",
-          "sha256": "308987c2c22b4de1b6fbfd0e00035c819162b46f7a2f87f0c73db45e5cca3129"
+          "sha256": "579c300d5148dc50ea0576f80a541f92753d66e3ed6943fd7ea0be08ec458a16"
         },
         "orbis-export/tools/native_dlfcn.c": {
           "file": "common/orbis-export/tools/native_dlfcn.c",
@@ -1026,7 +1026,7 @@
         },
         "orbis-export/tools/build_native_modules.py": {
           "file": "versions/25/orbis-export/tools/build_native_modules.py",
-          "sha256": "db07833ef336bdf4de47be5d6dd3f468ab7024b9abf9aadcd822c6233fb475ce"
+          "sha256": "28f487056a3491a46230e8e17c73580c77ae5e39898a294b98650ef4c63748d2"
         },
         "orbis-export/tools/check_native_package.py": {
           "file": "common/orbis-export/tools/check_native_package.py",
@@ -1034,7 +1034,7 @@
         },
         "orbis-export/tools/export_jdk.py": {
           "file": "common/orbis-export/tools/export_jdk.py",
-          "sha256": "308987c2c22b4de1b6fbfd0e00035c819162b46f7a2f87f0c73db45e5cca3129"
+          "sha256": "579c300d5148dc50ea0576f80a541f92753d66e3ed6943fd7ea0be08ec458a16"
         },
         "orbis-export/tools/native_dlfcn.c": {
           "file": "common/orbis-export/tools/native_dlfcn.c",

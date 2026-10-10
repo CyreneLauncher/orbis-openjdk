@@ -224,8 +224,12 @@ if a.desktop:
                     data[symbol:symbol + entry_size] = bytes(entry_size)
         (provider_path / source.name).write_bytes(data)
 
+# Release PRXs carry no debug information (create-fself needs the symbol table, so only debug
+# sections go); lib<name>.so stays the unstripped debugging artifact.
+(out/'stripped').mkdir(exist_ok=True)
 for name, _ in modules:
-    run([tc/'bin/linux/create-fself', '-in='+str(out/f'lib{name}.so'),
+    run(['llvm-strip', '--strip-debug', '-o', out/'stripped'/f'lib{name}.so', out/f'lib{name}.so'])
+    run([tc/'bin/linux/create-fself', '-in='+str(out/'stripped'/f'lib{name}.so'),
          '-out='+str(out/f'lib{name}.oelf'), '--lib='+str(out/f'lib{name}.prx'),
          '--libname=lib'+name, '--paid', a.paid, '--library-path', provider_path])
     assert (out/f'lib{name}.prx').read_bytes()[:4] == b'O\x15=\x1d'

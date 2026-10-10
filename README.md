@@ -75,6 +75,7 @@ python3 build.py export 25 --boot-jdk /path/to/host-jdk25
 `.github/workflows/release.yml` builds JDK 17, 21 and 25 on GitHub-hosted Ubuntu 24.04. It installs the SDK archives pinned in `toolchain.lock.json` (`tools/provision_sdk.py` checks every archive and the toolchain's `libc.a`) and the host JDKs recorded there. Run it from **Actions → Build Orbis runtimes → Run workflow**; with `publish` checked on the default branch it replaces the rolling release `download` (the scheme AngelAuraMC uses for its JREs), whose tag then points at the commit the runtimes were built from. It contains:
 
 - `jre17-orbis-x86_64.tar.xz`, `jre21-orbis-x86_64.tar.xz`, `jre25-orbis-x86_64.tar.xz`: each holds one audited `output/jdkNN` export, including its `build-provenance.json`, with file modes kept.
+- `jre17-orbis-x86_64-debug.tar.xz` (and 21, 25): the unstripped native modules behind that runtime's PRXs. Release PRXs are signed from copies with debug sections stripped, and `lib/ct.sym` (javac's `--release` table) is left out of the runtime.
 - `SHA256SUMS`.
 
 Cyrene Launcher downloads the `download` release instead of compiling the JDKs. It checks each asset against the release's `SHA256SUMS` and each runtime's own file inventory, and requires the `libc.a` hash recorded in `build-provenance.json` to match its own toolchain. Publishing is therefore the whole update; to install a release in a launcher checkout:
