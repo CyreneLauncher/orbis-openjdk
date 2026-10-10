@@ -89,8 +89,10 @@ def export(jdk, runtime_image, native, output, jimage, desktop=False):
         # Preserve non-native runtime data (tzdb, security data, etc.).
         for source, data_relative in data_entries:
             relative = Path('lib') / data_relative
+            # ct.sym is javac's --release symbol table; a runtime has no use for it.
             if (not source.is_file()
-                    or relative.as_posix() in ('lib/modules', 'lib/orbis-modules.list', 'lib/orbis-capabilities.json')
+                    or relative.as_posix() in ('lib/modules', 'lib/orbis-modules.list', 'lib/orbis-capabilities.json',
+                                               'lib/ct.sym')
                     or relative.parts[:2] == ('lib', 'fonts')):
                 continue
             if source.suffix in ('.so', '.prx', '.a', '.o', '.oelf'):

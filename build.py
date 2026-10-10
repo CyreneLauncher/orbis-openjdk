@@ -144,6 +144,13 @@ def main():
             raise RuntimeError('Output already exists; preserve it before producing a replacement: ' + str(destination))
         destination.parent.mkdir(exist_ok=True)
         shutil.copytree(export, destination)
+        # The release PRXs are signed from stripped copies; keep the unstripped modules apart.
+        debug = ROOT / 'output' / ('jdk' + version + '-debug')
+        if debug.exists():
+            raise RuntimeError('Output already exists; preserve it before producing a replacement: ' + str(debug))
+        debug.mkdir()
+        for module in sorted((export.parent / 'native').glob('lib*.so')):
+            shutil.copy2(module, debug / module.name)
         report = {'version': version, 'source': inputs(version), 'lock_sha256': sha(LOCK),
                   'boot_java': run([boot / 'bin/java', '-version'], capture=True),
                   'libc_sha256': sha(toolchain / 'lib/libc.a'),
