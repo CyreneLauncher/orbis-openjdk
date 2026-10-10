@@ -14,7 +14,7 @@ def digest(path):
 
 
 def asset_name(version):
-    return 'orbis-jdk' + version + '-x86_64.tar.xz'
+    return 'jre' + version + '-orbis-x86_64.tar.xz'
 
 
 def normalized(info):

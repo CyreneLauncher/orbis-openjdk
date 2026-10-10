@@ -72,15 +72,15 @@ python3 build.py export 25 --boot-jdk /path/to/host-jdk25
 
 ## Published runtimes
 
-`.github/workflows/release.yml` builds JDK 17, 21 and 25 on GitHub-hosted Ubuntu 24.04. It installs the SDK archives pinned in `toolchain.lock.json` (`tools/provision_sdk.py` checks every archive and the toolchain's `libc.a`) and the host JDKs recorded there. Run it from **Actions → Build Orbis runtimes → Run workflow**; with `publish` checked on the default branch it creates the release `jdk-<first 12 characters of the commit>` containing:
+`.github/workflows/release.yml` builds JDK 17, 21 and 25 on GitHub-hosted Ubuntu 24.04. It installs the SDK archives pinned in `toolchain.lock.json` (`tools/provision_sdk.py` checks every archive and the toolchain's `libc.a`) and the host JDKs recorded there. Run it from **Actions → Build Orbis runtimes → Run workflow**; with `publish` checked on the default branch it replaces the rolling release `download` (the scheme AngelAuraMC uses for its JREs), whose tag then points at the commit the runtimes were built from. It contains:
 
-- `orbis-jdk17-x86_64.tar.xz`, `orbis-jdk21-x86_64.tar.xz`, `orbis-jdk25-x86_64.tar.xz`: each holds one audited `output/jdkNN` export, including its `build-provenance.json`, with file modes kept.
+- `jre17-orbis-x86_64.tar.xz`, `jre21-orbis-x86_64.tar.xz`, `jre25-orbis-x86_64.tar.xz`: each holds one audited `output/jdkNN` export, including its `build-provenance.json`, with file modes kept.
 - `SHA256SUMS`.
 
-Cyrene Launcher downloads the latest of these releases instead of compiling the JDKs. It checks each asset against the release's `SHA256SUMS` and each runtime's own file inventory, and requires the `libc.a` hash recorded in `build-provenance.json` to match its own toolchain. Publishing is therefore the whole update; to install a release in a launcher checkout:
+Cyrene Launcher downloads the `download` release instead of compiling the JDKs. It checks each asset against the release's `SHA256SUMS` and each runtime's own file inventory, and requires the `libc.a` hash recorded in `build-provenance.json` to match its own toolchain. Publishing is therefore the whole update; to install a release in a launcher checkout:
 
 ```sh
-./orbis fetch-jdks  # in the launcher; --jdk-tag jdk-XXXXXXXXXXXX for an older release
+./orbis fetch-jdks  # in the launcher; --jdk-tag to install another release
 ```
 
 Keep `toolchain.lock.json` identical to the launcher's SDK pins. The launcher rejects a runtime whose recorded `libc.a` hash differs from its own toolchain.
