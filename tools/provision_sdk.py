@@ -74,7 +74,8 @@ def provision(destination, lock_path):
     toolchain = destination / lock['archives']['openorbis']['directory']
     for name, expected in lock['toolchain_files'].items():
         verify(toolchain / relative(name), expected)
-    env = {'ORBIS_SDK': str(sdk), 'PS4_TOOLCHAIN': str(toolchain)}
+    # create-fself, used to sign every native module, reads OO_PS4_TOOLCHAIN.
+    env = {'ORBIS_SDK': str(sdk), 'PS4_TOOLCHAIN': str(toolchain), 'OO_PS4_TOOLCHAIN': str(toolchain)}
     env_path = os.environ.get('GITHUB_ENV')
     if env_path:
         with Path(env_path).open('a') as output:
