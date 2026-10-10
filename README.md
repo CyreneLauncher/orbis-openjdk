@@ -72,15 +72,15 @@ python3 build.py export 25 --boot-jdk /path/to/host-jdk25
 
 ## Published runtimes
 
-`.github/workflows/release.yml` builds JDK 17, 21 and 25 on GitHub-hosted Ubuntu 24.04. It installs the SDK archives pinned in `toolchain.lock.json` (`tools/provision_sdk.py` checks every archive and the toolchain's `libc.a`) and the host JDKs recorded there. Run it from **Actions → Build Orbis runtimes → Run workflow**; with `publish` checked it creates the release `jdk-<first 12 characters of the commit>` containing:
+`.github/workflows/release.yml` builds JDK 17, 21 and 25 on GitHub-hosted Ubuntu 24.04. It installs the SDK archives pinned in `toolchain.lock.json` (`tools/provision_sdk.py` checks every archive and the toolchain's `libc.a`) and the host JDKs recorded there. Run it from **Actions → Build Orbis runtimes → Run workflow**; with `publish` checked on the default branch it creates the release `jdk-<first 12 characters of the commit>` containing:
 
 - `orbis-jdk17-x86_64.tar.xz`, `orbis-jdk21-x86_64.tar.xz`, `orbis-jdk25-x86_64.tar.xz`: each holds one audited `output/jdkNN` export, including its `build-provenance.json`, with file modes kept.
 - `SHA256SUMS`.
 
-Cyrene Launcher downloads these instead of compiling the JDKs. It derives the tag from its pinned `orbis-openjdk` revision and checks each asset against the SHA-256 recorded in its `tools/runtimes.lock.json`. After publishing a release for a new revision, pin both in the launcher:
+Cyrene Launcher downloads the latest of these releases instead of compiling the JDKs. It checks each asset against the release's `SHA256SUMS` and each runtime's own file inventory, and requires the `libc.a` hash recorded in `build-provenance.json` to match its own toolchain. Publishing is therefore the whole update; to install a release in a launcher checkout:
 
 ```sh
-./orbis pin-jdks    # in the launcher, after updating the orbis-openjdk revision
+./orbis fetch-jdks  # in the launcher; --jdk-tag jdk-XXXXXXXXXXXX for an older release
 ```
 
 Keep `toolchain.lock.json` identical to the launcher's SDK pins. The launcher rejects a runtime whose recorded `libc.a` hash differs from its own toolchain.
